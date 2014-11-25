@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Enum class which maps the response status codes with a flag which
+ * Enum which maps the response status codes with a flag which
  * indicates whether the response is an error ro not.
  *
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
@@ -39,12 +39,12 @@ public enum YahooStatusCode {
     CODE_505(505);
 
     /**
-     * The HTTP status code received from the Yahoo API
+     * The actual HTTP status code received from the Yahoo API
      */
     private int statusCode;
 
     /**
-     * Flag which indicates whether the status code
+     * Flag which indicates whether the status code signals that the response is an error or not
      */
     private boolean isError;
 
@@ -91,9 +91,9 @@ public enum YahooStatusCode {
     }
 
     private static List<YahooStatusCode> filterStatusCodes(boolean isError) {
-        List<YahooStatusCode> errorStatusCodes = new ArrayList<YahooStatusCode>();
+        List<YahooStatusCode> errorStatusCodes = new ArrayList<>();
         for (YahooStatusCode yahooStatusCode : values()) {
-            if (yahooStatusCode.isError() && isError) {
+            if (isError == yahooStatusCode.isError()) {
                 errorStatusCodes.add(yahooStatusCode);
             }
         }
