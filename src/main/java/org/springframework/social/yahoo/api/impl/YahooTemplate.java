@@ -14,19 +14,17 @@
  *  limitations under the License.
  */
 
-apply plugin: 'java'
+package org.springframework.social.yahoo.api.impl;
 
-sourceCompatibility = 1.5
-version = '1.0-SNAPSHOT'
+import org.springframework.social.yahoo.api.Yahoo;
 
-repositories {
-    mavenCentral()
-}
+/**
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ */
+public class YahooTemplate implements Yahoo {
 
-dependencies {
-    compile "org.springframework.social:spring-social-web:1.1.0.RELEASE"
-
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.mockito:mockito-core:1.10.8'
-    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    @Override
+    public boolean isAuthorized() {
+        return false;
+    }
 }

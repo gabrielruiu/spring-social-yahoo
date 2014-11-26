@@ -14,19 +14,12 @@
  *  limitations under the License.
  */
 
-apply plugin: 'java'
+package org.springframework.social.yahoo.api;
 
-sourceCompatibility = 1.5
-version = '1.0-SNAPSHOT'
+import org.springframework.social.ApiBinding;
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile "org.springframework.social:spring-social-web:1.1.0.RELEASE"
-
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.mockito:mockito-core:1.10.8'
-    testCompile 'org.hamcrest:hamcrest-all:1.3'
+/**
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ */
+public interface Yahoo extends ApiBinding {
 }
