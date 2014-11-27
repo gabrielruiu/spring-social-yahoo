@@ -17,6 +17,7 @@
 apply plugin: 'java'
 
 sourceCompatibility = 1.5
+targetCompatibility = 1.5
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -24,7 +25,11 @@ repositories {
 }
 
 dependencies {
-    compile "org.springframework.social:spring-social-web:1.1.0.RELEASE"
+    compile "org.springframework.social:spring-social-web:$springSocialWebVersion"
+
+    compile ("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
+    compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+    compile ("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
 
     testCompile 'junit:junit:4.11'
     testCompile 'org.mockito:mockito-core:1.10.8'

@@ -16,15 +16,53 @@
 
 package org.springframework.social.yahoo.api.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
+import org.springframework.social.yahoo.api.ContactsOperations;
+import org.springframework.social.yahoo.api.SocialDirectoryOperations;
 import org.springframework.social.yahoo.api.Yahoo;
+import org.springframework.social.yahoo.module.YahooModule;
+import org.springframework.web.client.RestTemplate;
 
 /**
+ * //TODO: in documentation for this class, mention the YDN help site for Yahoo Social API (https://developer.yahoo.com/social/rest_api_guide/)
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-public class YahooTemplate implements Yahoo {
+public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
+
+    private ContactsOperations contactsOperations;
+    private SocialDirectoryOperations socialDirectoryOperations;
+
+    public YahooTemplate(String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret) {
+        super(consumerKey, consumerSecret, accessToken, accessTokenSecret);
+        initSubApis();
+    }
 
     @Override
-    public boolean isAuthorized() {
-        return false;
+    public ContactsOperations contactsOperations() {
+        return contactsOperations;
+    }
+
+    @Override
+    public SocialDirectoryOperations socialDirectoryOperations() {
+        return socialDirectoryOperations;
+    }
+
+    @Override
+    protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
+        MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
+        converter.setObjectMapper(new ObjectMapper().registerModule(new YahooModule()));
+        return converter;
+    }
+
+    @Override
+    protected void configureRestTemplate(RestTemplate restTemplate) {
+        restTemplate.setErrorHandler(new YahooErrorHandler());
+    }
+
+    protected void initSubApis() {
+        this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized());
+        this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized());
     }
 }

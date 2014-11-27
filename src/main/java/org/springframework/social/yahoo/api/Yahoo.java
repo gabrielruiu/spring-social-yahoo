@@ -22,4 +22,8 @@ import org.springframework.social.ApiBinding;
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface Yahoo extends ApiBinding {
+
+    ContactsOperations contactsOperations();
+
+    SocialDirectoryOperations socialDirectoryOperations();
 }

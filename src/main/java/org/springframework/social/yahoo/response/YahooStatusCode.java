@@ -107,7 +107,7 @@ public enum YahooStatusCode {
     }
 
     private static List<YahooStatusCode> filterStatusCodes(boolean isError) {
-        List<YahooStatusCode> errorStatusCodes = new ArrayList<>();
+        List<YahooStatusCode> errorStatusCodes = new ArrayList<YahooStatusCode>();
         for (YahooStatusCode yahooStatusCode : values()) {
             if (isError == yahooStatusCode.isError()) {
                 errorStatusCodes.add(yahooStatusCode);
