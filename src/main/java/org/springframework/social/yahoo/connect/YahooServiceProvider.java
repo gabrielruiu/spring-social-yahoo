@@ -10,12 +10,12 @@ import org.springframework.social.yahoo.api.impl.YahooTemplate;
  */
 public class YahooServiceProvider extends AbstractOAuth1ServiceProvider<Yahoo> {
 
-    //TODO: get requestTokenUrl, authorizeUrl, authenticationUrl
+    //TODO: the response when querying for the quthentication token contains the guid of the currently logged in user, how to persist it for later use?
     public YahooServiceProvider(String consumerKey, String consumerSecret) {
         super(consumerKey, consumerSecret, new OAuth1Template(consumerKey, consumerSecret,
-                "requestTokenUrl",
-                "authorizeUrl",
-                "authenticationUrl"));
+                "https://api.login.yahoo.com/oauth/v2/get_request_token",
+                "https://api.login.yahoo.com/oauth/v2/request_auth",
+                "https://api.login.yahoo.com/oauth/v2/get_token"));
     }
 
     @Override
