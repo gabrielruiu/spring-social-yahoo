@@ -31,11 +31,14 @@ import org.springframework.web.client.RestTemplate;
  */
 public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
+    private String guid;
     private ContactsOperations contactsOperations;
     private SocialDirectoryOperations socialDirectoryOperations;
 
-    public YahooTemplate(String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret) {
+    public YahooTemplate(String consumerKey, String consumerSecret,
+                         String accessToken, String accessTokenSecret, String guid) {
         super(consumerKey, consumerSecret, accessToken, accessTokenSecret);
+        this.guid = guid;
         initSubApis();
     }
 
@@ -62,7 +65,7 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
     }
 
     protected void initSubApis() {
-        this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized());
+        this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized(), guid);
         this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized());
     }
 }

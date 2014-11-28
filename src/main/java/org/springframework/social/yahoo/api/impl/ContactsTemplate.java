@@ -14,10 +14,12 @@ import java.util.Set;
 public class ContactsTemplate extends AbstractYahooOperations implements ContactsOperations {
 
     private RestTemplate restTemplate;
+    private String guid;
 
-    public ContactsTemplate(RestTemplate restTemplate, boolean isAuthorized) {
+    public ContactsTemplate(RestTemplate restTemplate, boolean isAuthorized, String guid) {
         super(isAuthorized);
         this.restTemplate = restTemplate;
+        this.guid = guid;
     }
 
     @Override
