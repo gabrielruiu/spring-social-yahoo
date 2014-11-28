@@ -2,6 +2,7 @@ package org.springframework.social.yahoo.module;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,10 +11,46 @@ import java.util.Map;
  */
 public class YahooObject {
 
+    private long id;
+    private String uri;
+    private Date created;
+    private Date updated;
     private Map<String, Object> extraData;
 
     public YahooObject() {
         this.extraData = new HashMap<String, Object>();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
     /**
