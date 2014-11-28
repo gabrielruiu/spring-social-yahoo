@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    compile "org.springframework.social:spring-social-web:$springSocialWebVersion"
+    compile "org.springframework.social:spring-social-core:$springSocialVersion"
 
     compile ("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
     compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
