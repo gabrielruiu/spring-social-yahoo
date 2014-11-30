@@ -36,8 +36,12 @@ public class YahooOAuthTemplate extends OAuth1Template {
     @Override
     protected OAuthToken createOAuthToken(String tokenValue, String tokenSecret, MultiValueMap<String, String> response) {
         YahooOAuthToken oAuthToken = new YahooOAuthToken(tokenValue, tokenSecret);
-        oAuthToken.setAuthorizationExpiresIn(Long.valueOf(response.getFirst(OAUTH_AUTHORIZATION_EXPIRES_IN)));
-        oAuthToken.setExpiresIn(Long.valueOf(response.getFirst(OAUTH_EXPIRES_IN)));
+        if (response.getFirst(OAUTH_AUTHORIZATION_EXPIRES_IN) != null) {
+            oAuthToken.setAuthorizationExpiresIn(Long.valueOf(response.getFirst(OAUTH_AUTHORIZATION_EXPIRES_IN)));
+        }
+        if (response.getFirst(OAUTH_EXPIRES_IN) != null) {
+            oAuthToken.setExpiresIn(Long.valueOf(response.getFirst(OAUTH_EXPIRES_IN)));
+        }
         oAuthToken.setSessionHandle(response.getFirst(OAUTH_SESSION_HANDLE));
         oAuthToken.setGuid(response.getFirst(OAUTH_RESPONSE_GUID_KEY));
         this.oAuthToken = oAuthToken;
