@@ -15,7 +15,7 @@
  */
 
 apply plugin: 'java'
-
+apply plugin: 'maven'
 
 version = '1.0-SNAPSHOT'
 group = 'org.springframework.social'
