@@ -25,6 +25,7 @@ repositories {
 }
 
 dependencies {
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
     compile "org.springframework.social:spring-social-core:$springSocialVersion"
 
     compile ("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
