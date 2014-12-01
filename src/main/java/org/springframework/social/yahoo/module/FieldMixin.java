@@ -19,29 +19,37 @@ package org.springframework.social.yahoo.module;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Date;
 import java.util.Set;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-//TODO: build object mixins
+//TODO: add 'image' property
 @JsonIgnoreProperties(ignoreUnknown = true)
-abstract class ContactMixin extends YahooObjectMixin {
+abstract class FieldMixin {
 
     @JsonCreator
-    public ContactMixin(
+    public FieldMixin(
             @JsonProperty("id") int id,
             @JsonProperty("created") Date created,
             @JsonProperty("updated") Date updated,
             @JsonProperty("uri") String uri,
-            @JsonProperty("isConnection") boolean isConnection
-    ) {}
+            @JsonProperty("isConnection") boolean isConnection,
+            @JsonProperty("nickname") String nickname,
+            @JsonProperty("title") String title
+    ){}
 
-    @JsonProperty("fields")
-    Set<Field> fields;
 
-    @JsonProperty("categories")
-    Set<Category> categories;
+    @JsonProperty("value")
+    FieldValue value;
+
+    @JsonProperty(value = "type")
+    @JsonDeserialize(using = FieldTypeDeserializer.class)
+    FieldType type;
+
+    @JsonProperty("flags")
+    Set<FieldFlag> flags;
 }
