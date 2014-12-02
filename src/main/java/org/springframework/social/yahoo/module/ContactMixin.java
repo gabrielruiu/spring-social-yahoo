@@ -16,7 +16,6 @@
 
 package org.springframework.social.yahoo.module;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,18 +29,17 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class ContactMixin extends YahooObjectMixin {
 
-    @JsonCreator
-    public ContactMixin(
-            @JsonProperty("id") int id,
-            @JsonProperty("created") Date created,
-            @JsonProperty("updated") Date updated,
-            @JsonProperty("uri") String uri,
-            @JsonProperty("isConnection") boolean isConnection
-    ) {}
+    @JsonProperty("id") int id;
 
-    @JsonProperty("fields")
-    Set<Field> fields;
+    @JsonProperty("created") Date created;
 
-    @JsonProperty("categories")
-    Set<Category> categories;
+    @JsonProperty("updated") Date updated;
+
+    @JsonProperty("uri") String uri;
+
+    @JsonProperty("isConnection") boolean isConnection;
+
+    @JsonProperty("fields") Set<Field> fields;
+
+    /*@JsonProperty("categories") Set<Category> categories;*/
 }

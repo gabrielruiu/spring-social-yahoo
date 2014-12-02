@@ -17,9 +17,7 @@
 package org.springframework.social.yahoo.api.impl;
 
 import org.springframework.social.yahoo.api.ContactsOperations;
-import org.springframework.social.yahoo.module.Contact;
-import org.springframework.social.yahoo.module.Field;
-import org.springframework.social.yahoo.module.FieldType;
+import org.springframework.social.yahoo.module.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Set;
@@ -38,8 +36,11 @@ public class ContactsTemplate extends AbstractYahooOperations implements Contact
         this.guid = guid;
     }
 
-    @Override
     public Set<Field> getFieldsForContact(Contact contact, Set<FieldType> fieldTypes) {
         return null;
+    }
+
+    public Contacts getContacts() {
+        return restTemplate.getForObject(buildUri(String.format("/user/%s/contacts", guid)), ContactsWrapper.class).getContacts();
     }
 }

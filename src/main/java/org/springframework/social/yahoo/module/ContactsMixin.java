@@ -16,8 +16,9 @@
 
 package org.springframework.social.yahoo.module;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.util.Date;
 import java.util.List;
@@ -25,18 +26,21 @@ import java.util.List;
 /**
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-abstract class ContactsMixin extends YahooObjectMixin{
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonRootName("contacts")
+public abstract class ContactsMixin extends YahooObjectMixin {
 
-    @JsonCreator
-    public ContactsMixin(
-            @JsonProperty("start") int start,
-            @JsonProperty("count") int count,
-            @JsonProperty("total") int total,
-            @JsonProperty("uri") String uri,
-            @JsonProperty("created")Date created,
-            @JsonProperty("updated") Date updated
-    ){}
+    @JsonProperty("start") int start;
 
-    @JsonProperty("contact")
-    List<Contact> contact;
+    @JsonProperty("count") int count;
+
+    @JsonProperty("total") int total;
+
+    @JsonProperty("uri") String uri;
+
+    @JsonProperty("created") Date created;
+
+    @JsonProperty("updated") Date update;
+
+    @JsonProperty("contact") List<Contact> contact;
 }

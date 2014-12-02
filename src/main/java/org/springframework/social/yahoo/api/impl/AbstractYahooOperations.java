@@ -12,7 +12,7 @@ import java.net.URI;
 //TODO: isAppAuthorized, need to implement?
 abstract class AbstractYahooOperations {
 
-    private static final String API_URL_BASE = "https://social.yahooapis.com/v1/";
+    private static final String API_URL_BASE = "https://social.yahooapis.com/v1";
     private static final LinkedMultiValueMap<String, String> EMPTY_PARAMETERS = new LinkedMultiValueMap<String, String>();
 
     private boolean isAuthorized;

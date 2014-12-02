@@ -30,8 +30,14 @@ public class YahooModule extends SimpleModule {
 
     @Override
     public void setupModule(SetupContext context) {
-        super.setupModule(context);
-        context.setMixInAnnotations(Contact.class, ContactMixin.class);
+        context.setMixInAnnotations(ContactsWrapper.class, ContactsWrapperMixin.class);
         context.setMixInAnnotations(Contacts.class, ContactsMixin.class);
+        context.setMixInAnnotations(Contact.class, ContactMixin.class);
+        context.setMixInAnnotations(Field.class, FieldMixin.class);
+        context.setMixInAnnotations(FieldValue.class, FieldValueMixin.class);
+        context.setMixInAnnotations(AddressFieldValue.class, AddressFieldValueMixin.class);
+        context.setMixInAnnotations(DateFieldValue.class, DateFieldValueMixin.class);
+        context.setMixInAnnotations(NameFieldValue.class, NameFieldValueMixin.class);
+        context.setMixInAnnotations(SingleFieldValue.class, SingleFieldValueMixin.class);
     }
 }

@@ -17,6 +17,7 @@
 package org.springframework.social.yahoo.api;
 
 import org.springframework.social.yahoo.module.Contact;
+import org.springframework.social.yahoo.module.Contacts;
 import org.springframework.social.yahoo.module.Field;
 import org.springframework.social.yahoo.module.FieldType;
 
@@ -26,6 +27,8 @@ import java.util.Set;
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
  */
 public interface ContactsOperations {
+
+    Contacts getContacts();
 
     Set<Field> getFieldsForContact(Contact contact, Set<FieldType> fieldTypes);
 }

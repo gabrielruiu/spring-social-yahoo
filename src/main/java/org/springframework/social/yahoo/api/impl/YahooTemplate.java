@@ -42,12 +42,10 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
         initSubApis();
     }
 
-    @Override
     public ContactsOperations contactsOperations() {
         return contactsOperations;
     }
 
-    @Override
     public SocialDirectoryOperations socialDirectoryOperations() {
         return socialDirectoryOperations;
     }
@@ -55,7 +53,7 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
     @Override
     protected MappingJackson2HttpMessageConverter getJsonMessageConverter() {
         MappingJackson2HttpMessageConverter converter = super.getJsonMessageConverter();
-        converter.setObjectMapper(new ObjectMapper().registerModule(new YahooModule()));
+        converter.setObjectMapper(createObjectMapper());
         return converter;
     }
 
@@ -67,5 +65,11 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
     protected void initSubApis() {
         this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized(), guid);
         this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized());
+    }
+
+    protected ObjectMapper createObjectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new YahooModule());
+        return mapper;
     }
 }

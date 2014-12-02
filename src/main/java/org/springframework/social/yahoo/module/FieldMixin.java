@@ -16,10 +16,8 @@
 
 package org.springframework.social.yahoo.module;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Date;
 import java.util.Set;
@@ -31,25 +29,23 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class FieldMixin {
 
-    @JsonCreator
-    public FieldMixin(
-            @JsonProperty("id") int id,
-            @JsonProperty("created") Date created,
-            @JsonProperty("updated") Date updated,
-            @JsonProperty("uri") String uri,
-            @JsonProperty("isConnection") boolean isConnection,
-            @JsonProperty("nickname") String nickname,
-            @JsonProperty("title") String title
-    ){}
+    @JsonProperty("id") int id;
 
+    @JsonProperty("created") Date created;
 
-    @JsonProperty("value")
-    FieldValue value;
+    @JsonProperty("updated") Date updated;
 
-    @JsonProperty(value = "type")
-    @JsonDeserialize(using = FieldTypeDeserializer.class)
-    FieldType type;
+    @JsonProperty("uri") String uri;
 
-    @JsonProperty("flags")
-    Set<FieldFlag> flags;
+    @JsonProperty("isConnection") boolean isConnection;
+
+    @JsonProperty("nickname") String nickname;
+
+    @JsonProperty("title") String title;
+
+    @JsonProperty("value") FieldValue value;
+
+    @JsonProperty("type") FieldType type;
+
+    @JsonProperty("flags") Set<FieldFlag> flags;
 }
