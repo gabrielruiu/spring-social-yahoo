@@ -28,7 +28,7 @@ public class Field extends YahooObject {
     private Date created;
     private Date updated;
     private String uri;
-    private FieldType fieldType;
+    private FieldType type;
     private FieldValue value;
     private Set<FieldFlag> flags;
     private String title;
@@ -67,12 +67,12 @@ public class Field extends YahooObject {
         this.uri = uri;
     }
 
-    public FieldType getFieldType() {
-        return fieldType;
+    public FieldType getType() {
+        return type;
     }
 
-    public void setFieldType(FieldType fieldType) {
-        this.fieldType = fieldType;
+    public void setType(FieldType type) {
+        this.type = type;
     }
 
     public FieldValue getValue() {

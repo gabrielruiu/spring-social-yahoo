@@ -39,7 +39,7 @@ public class Contact extends YahooObject {
     private String uri;
     private boolean isConnection;
     private Set<Field> fields;
-    private Set<Category> categories;
+    /*private Set<Category> categories;*/
 
     public int getId() {
         return id;
@@ -89,11 +89,11 @@ public class Contact extends YahooObject {
         this.fields = fields;
     }
 
-    public Set<Category> getCategories() {
+    /*public Set<Category> getCategories() {
         return categories;
     }
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
-    }
+    }*/
 }
