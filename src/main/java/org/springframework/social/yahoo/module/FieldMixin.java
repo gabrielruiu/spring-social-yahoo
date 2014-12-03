@@ -18,6 +18,7 @@ package org.springframework.social.yahoo.module;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.Date;
 import java.util.Set;
@@ -45,6 +46,7 @@ abstract class FieldMixin {
 
     @JsonProperty("value") FieldValue value;
 
+    @JsonDeserialize(using = FieldTypeDeserializer.class)
     @JsonProperty("type") FieldType type;
 
     @JsonProperty("flags") Set<FieldFlag> flags;
