@@ -16,13 +16,19 @@
 
 package org.springframework.social.yahoo.module;
 
+import java.util.Date;
+
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
  */
 //TODO: add missing fields for category
 public class Category extends YahooObject {
 
+    private int id;
     private String name;
+    private Date created;
+    private Date updated;
+    private String uri;
 
     public String getName() {
         return name;
@@ -30,5 +36,37 @@ public class Category extends YahooObject {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 }

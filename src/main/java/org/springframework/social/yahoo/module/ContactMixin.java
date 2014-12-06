@@ -41,5 +41,5 @@ abstract class ContactMixin extends YahooObjectMixin {
 
     @JsonProperty("fields") List<Field> fields;
 
-    /*@JsonProperty("categories") Set<Category> categories;*/
+    @JsonProperty("categories") List<Category> categories;
 }
