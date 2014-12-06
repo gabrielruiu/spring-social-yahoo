@@ -22,14 +22,14 @@ import java.util.Set;
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
  */
-public class Field extends YahooObject {
+public abstract class Field extends YahooObject {
 
     private int id;
     private Date created;
     private Date updated;
     private String uri;
     private FieldType type;
-    private FieldValue value;
+    private Object value;
     private Set<FieldFlag> flags;
     private String title;
     private boolean isConnection;
@@ -75,11 +75,11 @@ public class Field extends YahooObject {
         this.type = type;
     }
 
-    public FieldValue getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(FieldValue value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

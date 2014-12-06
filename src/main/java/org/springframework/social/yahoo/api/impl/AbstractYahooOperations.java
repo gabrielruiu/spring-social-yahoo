@@ -5,6 +5,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import java.net.URI;
+import java.util.Arrays;
 
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
@@ -32,6 +33,7 @@ abstract class AbstractYahooOperations {
     }
 
     protected URI buildUri(String path, MultiValueMap<String, String> parameters) {
+        parameters.put("format", Arrays.asList("json"));
         return URIBuilder.fromUri(API_URL_BASE + path).queryParams(parameters).build();
     }
 }

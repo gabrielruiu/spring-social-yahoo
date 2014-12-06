@@ -18,7 +18,9 @@ package org.springframework.social.yahoo.module;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonTypeResolver;
 
 import java.util.Date;
 import java.util.Set;
@@ -28,6 +30,8 @@ import java.util.Set;
  */
 //TODO: add 'image' property
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.CUSTOM, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
+@JsonTypeResolver(YahooTypeResolver.class)
 abstract class FieldMixin {
 
     @JsonProperty("id") int id;
@@ -44,7 +48,7 @@ abstract class FieldMixin {
 
     @JsonProperty("title") String title;
 
-    @JsonProperty("value") FieldValue value;
+    @JsonProperty("value") Object value;
 
     @JsonDeserialize(using = FieldTypeDeserializer.class)
     @JsonProperty("type") FieldType type;

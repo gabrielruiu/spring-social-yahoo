@@ -11,6 +11,15 @@ public class DateFieldValue extends FieldValue {
     private int month;
     private int year;
 
+    public DateFieldValue() {
+    }
+
+    public DateFieldValue(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
     public int getDay() {
         return day;
     }

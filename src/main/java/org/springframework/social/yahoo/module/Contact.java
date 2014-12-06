@@ -17,7 +17,7 @@
 package org.springframework.social.yahoo.module;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 /**
  * A contact resource contains information about a user who is known, perhaps through
@@ -38,7 +38,7 @@ public class Contact extends YahooObject {
     private Date updated;
     private String uri;
     private boolean isConnection;
-    private Set<Field> fields;
+    private List<Field> fields;
     /*private Set<Category> categories;*/
 
     public int getId() {
@@ -81,11 +81,11 @@ public class Contact extends YahooObject {
         this.isConnection = isConnection;
     }
 
-    public Set<Field> getFields() {
+    public List<Field> getFields() {
         return fields;
     }
 
-    public void setFields(Set<Field> fields) {
+    public void setFields(List<Field> fields) {
         this.fields = fields;
     }
 

@@ -34,7 +34,6 @@ public class YahooModule extends SimpleModule {
         context.setMixInAnnotations(Contacts.class, ContactsMixin.class);
         context.setMixInAnnotations(Contact.class, ContactMixin.class);
         context.setMixInAnnotations(Field.class, FieldMixin.class);
-        context.setMixInAnnotations(FieldValue.class, FieldValueMixin.class);
         context.setMixInAnnotations(AddressFieldValue.class, AddressFieldValueMixin.class);
         context.setMixInAnnotations(DateFieldValue.class, DateFieldValueMixin.class);
         context.setMixInAnnotations(NameFieldValue.class, NameFieldValueMixin.class);

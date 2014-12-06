@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
@@ -39,7 +39,7 @@ abstract class ContactMixin extends YahooObjectMixin {
 
     @JsonProperty("isConnection") boolean isConnection;
 
-    @JsonProperty("fields") Set<Field> fields;
+    @JsonProperty("fields") List<Field> fields;
 
     /*@JsonProperty("categories") Set<Category> categories;*/
 }
