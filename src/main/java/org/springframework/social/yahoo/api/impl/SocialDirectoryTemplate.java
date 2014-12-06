@@ -10,8 +10,8 @@ public class SocialDirectoryTemplate extends AbstractYahooOperations implements 
 
     private RestTemplate restTemplate;
 
-    public SocialDirectoryTemplate(RestTemplate restTemplate, boolean isAuthorized) {
-        super(isAuthorized);
+    public SocialDirectoryTemplate(RestTemplate restTemplate, boolean isAuthorized, String guid) {
+        super(isAuthorized, guid);
         this.restTemplate = restTemplate;
     }
 }

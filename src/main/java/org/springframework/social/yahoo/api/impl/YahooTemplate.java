@@ -64,7 +64,7 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
     protected void initSubApis() {
         this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized(), guid);
-        this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized());
+        this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized(), guid);
     }
 
     protected ObjectMapper createObjectMapper() {

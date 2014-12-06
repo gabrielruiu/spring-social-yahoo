@@ -17,10 +17,11 @@
 package org.springframework.social.yahoo.api.impl;
 
 import org.springframework.social.yahoo.api.ContactsOperations;
-import org.springframework.social.yahoo.module.*;
+import org.springframework.social.yahoo.module.Contact;
+import org.springframework.social.yahoo.module.ContactWrapper;
+import org.springframework.social.yahoo.module.Contacts;
+import org.springframework.social.yahoo.module.ContactsWrapper;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Set;
 
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
@@ -28,19 +29,17 @@ import java.util.Set;
 public class ContactsTemplate extends AbstractYahooOperations implements ContactsOperations {
 
     private RestTemplate restTemplate;
-    private String guid;
 
     public ContactsTemplate(RestTemplate restTemplate, boolean isAuthorized, String guid) {
-        super(isAuthorized);
+        super(isAuthorized, guid);
         this.restTemplate = restTemplate;
-        this.guid = guid;
     }
 
-    public Set<Field> getFieldsForContact(Contact contact, Set<FieldType> fieldTypes) {
-        return null;
+    public Contact getContact(int contactCid) {
+        return restTemplate.getForObject(buildUri(String.format("/contact/%d", contactCid)), ContactWrapper.class).getContact();
     }
 
     public Contacts getContacts() {
-        return restTemplate.getForObject(buildUri(String.format("/user/%s/contacts", guid)), ContactsWrapper.class).getContacts();
+        return restTemplate.getForObject(buildUri("/contacts"), ContactsWrapper.class).getContacts();
     }
 }
