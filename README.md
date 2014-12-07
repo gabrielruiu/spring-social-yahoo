@@ -32,7 +32,7 @@ maintenance; see details [here](https://developer.yahoo.com/social/rest_api_guid
 
 
 | Resource | Methods | Notes
-| ------------- |-------------| -----| ------ |
+| ------------- |-------------| ------ |
 | [Contacts](https://developer.yahoo.com/social/rest_api_guide/contacts-resource.html) | GET | |
 | [Contacts by category name](https://developer.yahoo.com/social/rest_api_guide/category-resource.html) | GET | |
 | [Contact](https://developer.yahoo.com/social/rest_api_guide/contact-resource.html)   | GET | |
