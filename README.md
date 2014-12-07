@@ -2,7 +2,7 @@ spring-social-yahoo
 ===================
 
 Spring Social Yahoo is an extension based on Spring Social that provides functionality to communicate with the Yahoo Social Rest API.
-You can find the full documentation at [Yahoo's developer website](https://developer.yahoo.com/social/rest_api_guide/).
+You can find the full documentation at [Yahoo's developer website](https://developer.yahoo.com/social/rest_api_guide/ysp_api_book.html).
 Note that, at the time of writing this, the website crashes from time to time and cannot be accessed.
 
 # Notes
