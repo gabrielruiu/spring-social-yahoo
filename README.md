@@ -31,8 +31,10 @@ maintenance; see details [here](https://developer.yahoo.com/social/rest_api_guid
 - only the Contacts API is implemented
 
 
-| Resource | Methods | Uri  |
+| Resource | Methods | Uri  | Notes
 | ------------- |-------------| -----|
-| [Contacts](https://developer.yahoo.com/social/rest_api_guide/contacts-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/contacts  |
-| [Contacts by category name](https://developer.yahoo.com/social/rest_api_guide/category-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/category/{category-name}/contacts |
-| [Contact](https://developer.yahoo.com/social/rest_api_guide/contact-resource.html)   | GET | https://social.yahooapis.com/v1/user/{guid}/contact/{cid} |
+| [Contacts](https://developer.yahoo.com/social/rest_api_guide/contacts-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/contacts  | |
+| [Contacts by category name](https://developer.yahoo.com/social/rest_api_guide/category-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/category/{category-name}/contacts | |
+| [Contact](https://developer.yahoo.com/social/rest_api_guide/contact-resource.html)   | GET | https://social.yahooapis.com/v1/user/{guid}/contact/{cid} | |
+| [Categories](https://developer.yahoo.com/social/rest_api_guide/categories-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/categories | |
+| [Categories by contact cid](https://developer.yahoo.com/social/rest_api_guide/categories-by-contact-id-resource.html) | GET | https://social.yahooapis.com/v1/user/{guid}/contact/{cid}/categories | API returns a 404 response |

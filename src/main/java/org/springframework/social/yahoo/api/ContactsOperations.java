@@ -34,4 +34,6 @@ public interface ContactsOperations {
     Contact getContact(int contactCid);
 
     List<Category> getCategories();
+
+    List<Category> getCategoriesByContactCid(int contactCid);
 }
