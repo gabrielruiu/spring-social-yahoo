@@ -37,4 +37,4 @@ maintenance; see details [here](https://developer.yahoo.com/social/rest_api_guid
 | [Contacts by category name](https://developer.yahoo.com/social/rest_api_guide/category-resource.html) | GET | |
 | [Contact](https://developer.yahoo.com/social/rest_api_guide/contact-resource.html)   | GET | |
 | [Categories](https://developer.yahoo.com/social/rest_api_guide/categories-resource.html) | GET | |
-| [Categories by contact cid](https://developer.yahoo.com/social/rest_api_guide/categories-by-contact-id-resource.html) | GET | | API returns a 404 response |
+| [Categories by contact cid](https://developer.yahoo.com/social/rest_api_guide/categories-by-contact-id-resource.html) | GET | API returns a 404 response |
