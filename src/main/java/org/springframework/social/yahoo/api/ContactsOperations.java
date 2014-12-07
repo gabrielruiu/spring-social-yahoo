@@ -33,6 +33,8 @@ public interface ContactsOperations {
 
     Contact getContact(int contactCid);
 
+    void addCategory(Category category);
+
     List<Category> getCategories();
 
     List<Category> getCategoriesByContactCid(int contactCid);

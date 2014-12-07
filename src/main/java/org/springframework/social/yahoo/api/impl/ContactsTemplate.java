@@ -46,6 +46,10 @@ public class ContactsTemplate extends AbstractYahooOperations implements Contact
         return restTemplate.getForObject(buildUri(String.format("/contact/%d", contactCid)), ContactWrapper.class).getContact();
     }
 
+    public void addCategory(Category category) {
+        restTemplate.postForObject(buildUri("/categories"), category, Void.class);
+    }
+
     public List<Category> getCategories() {
         return restTemplate.getForObject(buildUri("/categories"), CategoriesWrapper.class).getCategories().getCategory();
     }
