@@ -21,7 +21,6 @@ import java.util.Date;
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
  */
-//TODO: add missing fields for category
 public class Category extends YahooObject {
 
     private int id;

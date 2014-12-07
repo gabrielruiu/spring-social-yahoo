@@ -16,8 +16,11 @@
 
 package org.springframework.social.yahoo.api;
 
+import org.springframework.social.yahoo.module.Category;
 import org.springframework.social.yahoo.module.Contact;
 import org.springframework.social.yahoo.module.Contacts;
+
+import java.util.List;
 
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
@@ -26,5 +29,9 @@ public interface ContactsOperations {
 
     Contacts getContacts();
 
+    Contacts getContactsByCategory(String categoryName);
+
     Contact getContact(int contactCid);
+
+    List<Category> getCategories();
 }
