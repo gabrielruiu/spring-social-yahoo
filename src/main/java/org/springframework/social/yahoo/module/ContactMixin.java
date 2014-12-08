@@ -25,7 +25,6 @@ import java.util.List;
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
  */
-//TODO: build object mixins
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class ContactMixin extends YahooObjectMixin {
 
