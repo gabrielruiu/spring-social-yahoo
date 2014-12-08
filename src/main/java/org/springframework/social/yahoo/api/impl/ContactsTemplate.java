@@ -17,6 +17,7 @@
 package org.springframework.social.yahoo.api.impl;
 
 import org.springframework.social.yahoo.api.ContactsOperations;
+import org.springframework.social.yahoo.filter.search.SearchFilter;
 import org.springframework.social.yahoo.module.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -36,6 +37,11 @@ public class ContactsTemplate extends AbstractYahooOperations implements Contact
 
     public Contacts getContacts() {
         return restTemplate.getForObject(buildUri("/contacts"), ContactsWrapper.class).getContacts();
+    }
+
+    @Override
+    public Contacts getContacts(SearchFilter filter) {
+        return restTemplate.getForObject(buildUri(String.format("/contacts;%s", filter.build())), ContactsWrapper.class).getContacts();
     }
 
     public Contacts getContactsByCategory(String categoryName) {

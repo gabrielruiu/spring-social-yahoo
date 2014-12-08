@@ -16,6 +16,7 @@
 
 package org.springframework.social.yahoo.api;
 
+import org.springframework.social.yahoo.filter.search.SearchFilter;
 import org.springframework.social.yahoo.module.Category;
 import org.springframework.social.yahoo.module.Contact;
 import org.springframework.social.yahoo.module.Contacts;
@@ -28,6 +29,8 @@ import java.util.List;
 public interface ContactsOperations {
 
     Contacts getContacts();
+
+    Contacts getContacts(SearchFilter filter);
 
     Contacts getContactsByCategory(String categoryName);
 
