@@ -7,7 +7,7 @@ public enum SearchFilterFieldType {
 
     NAME_GIVEN_NAME("givenName"),
     NAME_MIDDLE_NAME("middleName"),
-    NAME_FAMILY_NAME("fmailyName"),
+    NAME_FAMILY_NAME("familyName"),
     NAME_PREFIX("prefix"),
     NAME_SUFFIX("suffix"),
     NAME_GIVEN_NAME_SOUND("givenNameSound"),

@@ -1,5 +1,6 @@
 package org.springframework.social.yahoo.filter.search;
 
+import org.springframework.social.yahoo.filter.ContactsFilter;
 import org.springframework.social.yahoo.module.FieldType;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-public class SearchFilter {
+public class SearchFilter implements ContactsFilter {
 
     private List<SingleFilter> filters = new ArrayList<>();
 
@@ -28,7 +29,7 @@ public class SearchFilter {
         return this;
     }
 
-    public String build() {
+    public String buildFilter() {
         StringBuilder sb = new StringBuilder();
         for (SingleFilter filter : filters) {
             sb.append(filter.field).append(".").append(filter.conditionParameter).append("=").append(filter.conditionValue);
