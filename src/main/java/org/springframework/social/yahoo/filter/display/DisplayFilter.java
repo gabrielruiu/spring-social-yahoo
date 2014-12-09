@@ -21,8 +21,10 @@ public class DisplayFilter implements ContactsFilter {
         return this;
     }
 
-    public DisplayFilter withField(FieldType field) {
-        fields.add(field.name().toLowerCase());
+    public DisplayFilter withFields(FieldType... fields) {
+        for (FieldType field : fields) {
+            this.fields.add(field.name().toLowerCase());
+        }
         return this;
     }
 
