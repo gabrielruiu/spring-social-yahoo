@@ -41,7 +41,7 @@ public class ContactsTemplate extends AbstractYahooOperations implements Contact
 
     @Override
     public Contacts getContacts(ContactsFilter filter) {
-        return restTemplate.getForObject(buildUri(String.format("/contacts;%s", filter.buildFilter())), ContactsWrapper.class).getContacts();
+        return restTemplate.getForObject(buildUri(String.format("/contacts;%s", filter.build())), ContactsWrapper.class).getContacts();
     }
 
     public Contacts getContactsByCategory(String categoryName) {
