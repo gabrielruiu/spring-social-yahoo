@@ -17,7 +17,7 @@ public abstract class RequestCustomizer {
         if (isFieldAllowed(token.getFieldName())) {
             tokens.add(token);
         } else {
-            throw new IllegalArgumentException(String.format("Token with fieldName=%s not" +
+            throw new IllegalArgumentException(String.format("Token with fieldName=%s not " +
                     "allowed", token.getFieldName()));
         }
     }
