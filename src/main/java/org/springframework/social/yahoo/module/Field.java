@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.Set;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public abstract class Field extends YahooObject {
 

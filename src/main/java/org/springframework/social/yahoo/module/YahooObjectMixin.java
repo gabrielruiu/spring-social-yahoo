@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 /**
  * Annotated mixin to add Jackson annotations to YahooObject.
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class YahooObjectMixin {

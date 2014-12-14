@@ -5,7 +5,7 @@ import org.springframework.social.oauth1.OAuthToken;
 import org.springframework.social.yahoo.api.Yahoo;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 //TODO: add copyright for classes that dont have any
 public class YahooConnectionFactory extends OAuth1ConnectionFactory<Yahoo> {

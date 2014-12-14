@@ -8,7 +8,7 @@ import java.net.URI;
 import java.util.Arrays;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 //TODO: isAppAuthorized, need to implement?
 abstract class AbstractYahooOperations {

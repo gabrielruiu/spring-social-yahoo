@@ -1,7 +1,7 @@
 package org.springframework.social.yahoo.api;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface SocialDirectoryOperations {
 }

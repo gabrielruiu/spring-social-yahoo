@@ -6,7 +6,7 @@ import org.springframework.social.oauth1.OAuthToken;
 import org.springframework.util.MultiValueMap;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooOAuthTemplate extends OAuth1Template {
 

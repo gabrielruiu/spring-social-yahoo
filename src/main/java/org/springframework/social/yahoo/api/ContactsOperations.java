@@ -24,7 +24,7 @@ import org.springframework.social.yahoo.module.Contacts;
 import java.util.List;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface ContactsOperations {
 

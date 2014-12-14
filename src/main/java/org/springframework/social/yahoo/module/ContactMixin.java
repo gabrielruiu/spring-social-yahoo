@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class ContactMixin extends YahooObjectMixin {

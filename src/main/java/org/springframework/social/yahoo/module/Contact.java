@@ -28,7 +28,7 @@ import java.util.List;
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contact-resource.html">Contact resource</a>
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@1and1.ro)
+ * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 //TODO: use personal email instead of work email
 public class Contact extends YahooObject {
