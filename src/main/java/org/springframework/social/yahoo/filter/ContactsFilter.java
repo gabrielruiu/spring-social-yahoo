@@ -21,20 +21,32 @@ import org.springframework.social.yahoo.module.FieldType;
  */
 public class ContactsFilter {
 
-    private SearchFilter searchFilter = new SearchFilter();
+    private SearchFilter orSearchFilter = new OrSearchFilter();
+    private SearchFilter andSearchFilter = new AndSearchFilter();
     private SortFields sortFields = new SortFields();
     private SortOrder sortOrder = new SortOrder();
     private DisplayFilter displayFilter = new DisplayFilter();
 
-    public ContactsFilter withFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
-        searchFilter.addField(fieldType, key, condition);
+    public ContactsFilter withOrFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
+        orSearchFilter.addField(fieldType, key, condition);
         return this;
     }
 
-    public ContactsFilter withFilter(SearchFilter.SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
-        searchFilter.addField(field, key, condition);
+    public ContactsFilter withOrFilter(SearchFilter.SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
+        orSearchFilter.addField(field, key, condition);
         return this;
     }
+
+    public ContactsFilter withAndFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
+        andSearchFilter.addField(fieldType, key, condition);
+        return this;
+    }
+
+    public ContactsFilter withAndFilter(SearchFilter.SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
+        andSearchFilter.addField(field, key, condition);
+        return this;
+    }
+
 
     public ContactsFilter displaySelectedFields(FieldType... fieldTypes) {
         displayFilter.addFields(fieldTypes);
@@ -63,8 +75,12 @@ public class ContactsFilter {
 
     public String build() {
         StringBuilder sb = new StringBuilder();
-        if (searchFilter.hasTokens()) {
-
+        if (orSearchFilter.hasTokens()) {
+            sb.append(orSearchFilter.toRequest());
+        }
+        if (andSearchFilter.hasTokens()) {
+            sb.append(";");
+            sb.append(andSearchFilter.toRequest());
         }
         if (displayFilter.hasTokens()) {
             sb.append(";");

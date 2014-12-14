@@ -4,10 +4,21 @@ import org.springframework.social.yahoo.module.FieldType;
 
 import java.util.List;
 
+import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
+
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SearchFilter extends RequestCustomizer {
+
+    protected static final String AND_TOKEN_SEPARATOR = ";";
+    protected static final String OR_TOKEN_SEPARATOR = ",";
+
+    private String tokenSeparator;
+
+    public SearchFilter(String tokenSeparator) {
+        this.tokenSeparator = tokenSeparator;
+    }
 
     public void addField(FieldType fieldType, SearchFilterKey key, String condtition) {
         addToken(fieldType.name().toLowerCase(), key, condtition);
@@ -31,7 +42,10 @@ public class SearchFilter extends RequestCustomizer {
         StringBuilder sb = new StringBuilder();
         List<CustomizerToken> tokens = getTokens();
         for (CustomizerToken token : tokens) {
-
+            sb.append(token.getFieldName()).append(".").append(token.getKey()).append("=").append(token.getValue());
+            if (shouldAddTokenSeparator(tokens, token)) {
+                sb.append(tokenSeparator);
+            }
         }
         return sb.toString();
     }
