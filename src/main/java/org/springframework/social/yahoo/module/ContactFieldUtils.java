@@ -23,6 +23,14 @@ class ContactFieldUtils  {
         return null;
     }
 
+    public static AddressFieldValue getAddressValue(Contact contact) {
+        AddressField addressField = (AddressField) getField(contact, FieldType.ADDRESS);
+        if (addressField != null) {
+            return addressField.getValue();
+        }
+        return null;
+    }
+
     public static String getValueFromSingleValueField(Contact contact, FieldType fieldType) {
         return getValueFromSingleField(getField(contact, fieldType));
     }

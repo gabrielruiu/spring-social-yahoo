@@ -153,4 +153,8 @@ public class Contact extends YahooObject {
     public NameFieldValue getName() {
         return getNameValue(this);
     }
+
+    public AddressFieldValue getAddress() {
+        return getAddressValue(this);
+    }
 }

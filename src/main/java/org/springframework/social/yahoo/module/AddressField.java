@@ -8,7 +8,7 @@ public class AddressField extends Field {
     private AddressFieldValue value;
 
     @Override
-    public Object getValue() {
+    public AddressFieldValue getValue() {
         return value;
     }
 
