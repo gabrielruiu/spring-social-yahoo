@@ -19,6 +19,8 @@ package org.springframework.social.yahoo.module;
 import java.util.Date;
 import java.util.List;
 
+import static org.springframework.social.yahoo.module.ContactFieldUtils.*;
+
 /**
  * A contact resource contains information about a user who is known, perhaps through
  * an email exchange, to another user. Contacts are just like entries in an address book.
@@ -30,7 +32,6 @@ import java.util.List;
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-//TODO: use personal email instead of work email
 public class Contact extends YahooObject {
 
     private int id;
@@ -95,5 +96,61 @@ public class Contact extends YahooObject {
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public String getEmail() {
+        return getValueFromSingleValueField(this, FieldType.EMAIL);
+    }
+
+    public String getGuid() {
+        return getValueFromSingleValueField(this, FieldType.GUID);
+    }
+
+    public String getYahooId() {
+        return getValueFromSingleValueField(this, FieldType.YAHOOID);
+    }
+
+    public String getOtherId() {
+        return getValueFromSingleValueField(this, FieldType.OTHERID);
+    }
+
+    public String getCompany() {
+        return getValueFromSingleValueField(this, FieldType.COMPANY);
+    }
+
+    public String getNickName() {
+        return getValueFromSingleValueField(this, FieldType.NICKNAME);
+    }
+
+    public String getPhone() {
+        return getValueFromSingleValueField(this, FieldType.PHONE);
+    }
+
+    public String getJobTitle() {
+        return getValueFromSingleValueField(this, FieldType.JOBTITLE);
+    }
+
+    public String getNotes() {
+        return getValueFromSingleValueField(this, FieldType.NOTES);
+    }
+
+    public String getLink() {
+        return getValueFromSingleValueField(this, FieldType.LINK);
+    }
+
+    public String getCustom() {
+        return getValueFromSingleValueField(this, FieldType.CUSTOM);
+    }
+
+    public DateFieldValue getBirthday() {
+        return getDateValue(this, FieldType.BIRTHDAY);
+    }
+
+    public DateFieldValue getAnniversary() {
+        return getDateValue(this, FieldType.ANNIVERSARY);
+    }
+
+    public NameFieldValue getName() {
+        return getNameValue(this);
     }
 }

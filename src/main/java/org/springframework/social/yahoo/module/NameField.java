@@ -8,7 +8,7 @@ public class NameField extends Field {
     private NameFieldValue value;
 
     @Override
-    public Object getValue() {
+    public NameFieldValue getValue() {
         return value;
     }
 

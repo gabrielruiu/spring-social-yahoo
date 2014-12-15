@@ -8,7 +8,7 @@ public class DateField extends Field {
     private DateFieldValue value;
 
     @Override
-    public Object getValue() {
+    public DateFieldValue getValue() {
         return value;
     }
 
