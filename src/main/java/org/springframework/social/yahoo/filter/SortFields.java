@@ -42,12 +42,14 @@ public class SortFields extends RequestCustomizer {
     @Override
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
-        sb.append(SORT_FIELDS_KEY).append(SYMBOL_EQUALS);
-        List<CustomizerToken> tokens = getTokens();
-        for (CustomizerToken token : getTokens()) {
-            sb.append(token.getValue());
-            if (shouldAddTokenSeparator(tokens, token)) {
-                sb.append(SYMBOL_COMMA);
+        if (hasTokens()) {
+            sb.append(SORT_FIELDS_KEY).append(SYMBOL_EQUALS);
+            List<CustomizerToken> tokens = getTokens();
+            for (CustomizerToken token : getTokens()) {
+                sb.append(token.getValue());
+                if (shouldAddTokenSeparator(tokens, token)) {
+                    sb.append(SYMBOL_COMMA);
+                }
             }
         }
         return sb.toString();
@@ -64,6 +66,9 @@ public class SortFields extends RequestCustomizer {
             if (!(type.equals(FieldType.NAME) || type.equals(FieldType.ADDRESS))) {
                 sortableFields.add(type.name().toLowerCase());
             }
+        }
+        for (SortableField sortableField : SortableField.values()) {
+            sortableFields.add(sortableField.getParameterName());
         }
         return sortableFields;
     }

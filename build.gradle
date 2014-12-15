@@ -27,12 +27,14 @@ repositories {
 dependencies {
     compile "org.apache.commons:commons-lang3:$commonsLangVersion"
     compile "org.springframework.social:spring-social-core:$springSocialVersion"
+    compile "com.google.guava:guava:$googleGuavaVersion"
 
-    compile ("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-    compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-    compile ("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
+    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
 
     testCompile ("junit:junit:$junitVersion")
+    testCompile ("pl.pragmatists:JUnitParams:$junitParamsVersion")
     testCompile ("org.mockito:mockito-core:$mockitoVersion")
     testCompile ("org.hamcrest:hamcrest-all:$hamcrestVersion")
 }
