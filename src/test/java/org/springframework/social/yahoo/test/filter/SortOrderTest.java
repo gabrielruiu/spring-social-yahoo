@@ -37,6 +37,13 @@ public class SortOrderTest {
     }
 
     @Test
+    public void shouldReturnEmptyStringForNoOrderSpecified() {
+        SortOrder sortOrder = new SortOrder();
+
+        assertThat(sortOrder.toRequest(), is(""));
+    }
+
+    @Test
     public void shouldConstructValidRequestForSortingAscending() {
         SortOrder sortOrder = new SortOrder();
         sortOrder.setOrder(SortOrder.Order.ASC);
