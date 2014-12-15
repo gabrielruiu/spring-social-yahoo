@@ -2,7 +2,8 @@ package org.springframework.social.yahoo.filter;
 
 import org.springframework.social.yahoo.module.FieldType;
 
-import static org.springframework.social.yahoo.filter.TokenConstants.*;
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_COMMA;
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_SEMICOLON;
 
 /**
  * Filters can only be used when calling the HTTP GET method of the Contacts URI.
@@ -81,19 +82,19 @@ public class ContactsFilter {
             sb.append(orSearchFilter.toRequest());
         }
         if (andSearchFilter.hasTokens()) {
-            sb.append(SYMBOL_EQUALS);
+            sb.append(SYMBOL_SEMICOLON);
             sb.append(andSearchFilter.toRequest());
         }
         if (displayFilter.hasTokens()) {
-            sb.append(SYMBOL_EQUALS);
+            sb.append(SYMBOL_SEMICOLON);
             sb.append(displayFilter.toRequest());
         }
         if (sortFields.hasTokens()) {
-            sb.append(SYMBOL_EQUALS);
+            sb.append(SYMBOL_SEMICOLON);
             sb.append(sortFields.toRequest());
         }
         if (sortOrder.hasTokens()) {
-            sb.append(SYMBOL_EQUALS);
+            sb.append(SYMBOL_SEMICOLON);
             sb.append(sortOrder.toRequest());
         }
         return sb.toString();
