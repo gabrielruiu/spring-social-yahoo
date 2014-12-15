@@ -2,6 +2,8 @@ package org.springframework.social.yahoo.filter;
 
 import org.springframework.social.yahoo.module.FieldType;
 
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUALS;
+
 /**
  * Filters can only be used when calling the HTTP GET method of the Contacts URI.
  * If you call GET without a filter, you get a response including all of the contacts
@@ -79,19 +81,19 @@ public class ContactsFilter {
             sb.append(orSearchFilter.toRequest());
         }
         if (andSearchFilter.hasTokens()) {
-            sb.append(";");
+            sb.append(SYMBOL_EQUALS);
             sb.append(andSearchFilter.toRequest());
         }
         if (displayFilter.hasTokens()) {
-            sb.append(";");
+            sb.append(SYMBOL_EQUALS);
             sb.append(displayFilter.toRequest());
         }
         if (sortFields.hasTokens()) {
-            sb.append(";");
+            sb.append(SYMBOL_EQUALS);
             sb.append(sortFields.toRequest());
         }
         if (sortOrder.hasTokens()) {
-            sb.append(";");
+            sb.append(SYMBOL_EQUALS);
             sb.append(sortOrder.toRequest());
         }
         return sb.toString();

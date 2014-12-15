@@ -4,6 +4,8 @@ import org.springframework.social.yahoo.module.FieldType;
 
 import java.util.List;
 
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_COMMA;
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUALS;
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
 
 /**
@@ -33,12 +35,12 @@ public class DisplayFilter extends RequestCustomizer {
     @Override
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
-        sb.append(DISPLAY_FILTER_KEY).append("=");
+        sb.append(DISPLAY_FILTER_KEY).append(SYMBOL_EQUALS);
         List<CustomizerToken> tokens = getTokens();
         for (CustomizerToken token : tokens) {
             sb.append(token.getValue());
             if (shouldAddTokenSeparator(tokens, token)) {
-                sb.append(",");
+                sb.append(SYMBOL_COMMA);
             }
         }
         return sb.toString();

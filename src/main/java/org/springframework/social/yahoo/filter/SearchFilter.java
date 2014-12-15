@@ -11,9 +11,6 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
  */
 public class SearchFilter extends RequestCustomizer {
 
-    protected static final String AND_TOKEN_SEPARATOR = ";";
-    protected static final String OR_TOKEN_SEPARATOR = ",";
-
     private String tokenSeparator;
 
     public SearchFilter(String tokenSeparator) {

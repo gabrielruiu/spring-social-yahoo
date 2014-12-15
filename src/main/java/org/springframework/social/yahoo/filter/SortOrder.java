@@ -22,7 +22,7 @@ public class SortOrder extends RequestCustomizer {
     @Override
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
-        sb.append(SORT_ORDER_KEY).append("=");
+        sb.append(SORT_ORDER_KEY).append(TokenConstants.SYMBOL_EQUALS);
         sb.append(getTokens().get(0).getValue());
         return sb.toString();
     }
