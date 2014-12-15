@@ -8,5 +8,5 @@ public class TokenConstants {
     public static final String SYMBOL_COMMA = ",";
     public static final String SYMBOL_SEMICOLON = ";";
     public static final String SYMBOL_EQUALS = "=";
-
+    public static final String SYMBOL_PERIOD = ".";
 }

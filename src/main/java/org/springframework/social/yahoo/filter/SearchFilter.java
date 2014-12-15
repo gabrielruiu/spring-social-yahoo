@@ -4,6 +4,8 @@ import org.springframework.social.yahoo.module.FieldType;
 
 import java.util.List;
 
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUALS;
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_PERIOD;
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
 
 /**
@@ -39,7 +41,11 @@ public class SearchFilter extends RequestCustomizer {
         StringBuilder sb = new StringBuilder();
         List<CustomizerToken> tokens = getTokens();
         for (CustomizerToken token : tokens) {
-            sb.append(token.getFieldName()).append(".").append(token.getKey()).append("=").append(token.getValue());
+            sb.append(token.getFieldName())
+                    .append(SYMBOL_PERIOD)
+                    .append(token.getKey())
+                    .append(SYMBOL_EQUALS)
+                    .append(token.getValue());
             if (shouldAddTokenSeparator(tokens, token)) {
                 sb.append(tokenSeparator);
             }
