@@ -71,6 +71,13 @@ public class ContactsFilter {
         return this;
     }
 
+    /**
+     * When requesting a Contacts resource, the order of the Contact objects can be
+     * specified using the 'sort' key, which can be either 'asc' (default) and 'desc'.
+     *
+     * The 'sort' key needs to be accompanied by the 'sort-fields' key, which specifies the fields
+     * by which the sort is made.
+     */
     public ContactsFilter sortOrder(SortOrder.Order order) {
         sortOrder.setOrder(order);
         return this;

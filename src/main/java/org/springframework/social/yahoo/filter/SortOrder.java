@@ -1,6 +1,15 @@
 package org.springframework.social.yahoo.filter;
 
 /**
+ * When requesting a Contacts resource, the order of the Contact objects can be
+ * specified using the 'sort' key, which can be either 'asc' (default) and 'desc'.
+ *
+ * The 'sort' key needs to be accompanied by the 'sort-fields' key, which specifies the fields
+ * by which the sort is made.
+ *
+ * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
+ * @see {@link ContactsFilter#setOrder(Order))
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SortOrder extends RequestCustomizer {
