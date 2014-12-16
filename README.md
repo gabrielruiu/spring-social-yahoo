@@ -18,6 +18,7 @@ the max length of the **accessToken** column (you can go for 1000 max length)
 - you can give spring-social-yahoo a try by cloning the forked repo of spring-social-samples, available on my account
 at https://github.com/gabrielruiu/spring-social-samples/tree/master/spring-social-quickstart
 - most classes contain links to the Yahoo documentation website
+- I would appreciate very much if you would take the time to give me a short email describing your usage of this library
 
 # Tips
 - if you want to build a filter for the Contacts resource (see *ContactsFilter*), you will most likely be using
