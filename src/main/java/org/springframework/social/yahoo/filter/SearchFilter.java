@@ -57,22 +57,24 @@ public class SearchFilter extends RequestCustomizer {
     @Override
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
-        List<CustomizerToken> tokens = getTokens();
-        for (CustomizerToken token : tokens) {
-            sb.append(token.getFieldName())
-                    .append(SYMBOL_PERIOD)
-                    .append(token.getKey())
-                    .append(SYMBOL_EQUALS)
-                    .append(token.getValue());
-            if (shouldAddTokenSeparator(tokens, token)) {
-                sb.append(tokenSeparator);
+        if (hasTokens()) {
+            List<CustomizerToken> tokens = getTokens();
+            for (CustomizerToken token : tokens) {
+                sb.append(token.getFieldName())
+                        .append(SYMBOL_PERIOD)
+                        .append(token.getKey())
+                        .append(SYMBOL_EQUALS)
+                        .append(token.getValue());
+                if (shouldAddTokenSeparator(tokens, token)) {
+                    sb.append(tokenSeparator);
+                }
             }
         }
         return sb.toString();
     }
 
     /**
-     * Verify that, only SearchableField and FieldTypes(except NAME ) can be searched for
+     * Only SearchableField and FieldTypes(except NAME) can be searched for
      */
     private static List<String> searchableFields() {
         List<String> searchableFields = new ArrayList<>();

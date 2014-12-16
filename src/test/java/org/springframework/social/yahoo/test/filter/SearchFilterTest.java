@@ -44,6 +44,13 @@ public class SearchFilterTest {
     private static final String GROUP1_CATEGORY = "group1";
 
     @Test
+    public void shouldReturnEmptyStringForNoDisplayFilters() {
+        SearchFilter searchFilter = new SearchFilter();
+
+        assertThat(searchFilter.toRequest(), is(""));
+    }
+
+    @Test
     public void shouldConstructValidOrSearchRequest() {
         SearchFilter orSearchFilter = new SearchFilter(SYMBOL_COMMA);
         orSearchFilter.addField(EMAIL, PRESENT, "1");
