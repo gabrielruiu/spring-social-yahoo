@@ -31,6 +31,7 @@ import static org.springframework.social.yahoo.module.FieldType.YAHOOID;
  * in the Yahoo documentation for sorting
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
+ * @see {@link SortFields}
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */

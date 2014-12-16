@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.is;
  * requests for setting the sorting order.
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
+ * @see {@link SortOrder}
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
