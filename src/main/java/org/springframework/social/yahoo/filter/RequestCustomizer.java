@@ -9,6 +9,7 @@ import java.util.List;
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
+//TODO: rename with something more specific to contacts filtering?
 public abstract class RequestCustomizer {
 
     public List<CustomizerToken> tokens = new ArrayList<>();

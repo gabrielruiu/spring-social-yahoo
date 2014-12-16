@@ -2,38 +2,56 @@ package org.springframework.social.yahoo.filter;
 
 import org.springframework.social.yahoo.module.FieldType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUALS;
 import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_PERIOD;
+import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_SEMICOLON;
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
+import static org.springframework.social.yahoo.module.FieldType.NAME;
 
 /**
+ * Implementation of {@link RequestCustomizer} that builds a filter for the Contacts resource, such that only
+ * those contacts which respect the conditions, will be returned from the Yahoo Contacts API.
+ *
+ * There are two types of SearchFilters
+ * - AND search filter
+ * - OR search filter
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SearchFilter extends RequestCustomizer {
 
+    private static final List<String> SEARCHABLE_FIELDS = searchableFields();
     private String tokenSeparator;
+
+    /**
+     * By default, an 'AND' search filter is constructed
+     */
+    public SearchFilter() {
+        this.tokenSeparator = SYMBOL_SEMICOLON;
+    }
 
     public SearchFilter(String tokenSeparator) {
         this.tokenSeparator = tokenSeparator;
     }
 
-    public void addField(FieldType fieldType, SearchFilterKey key, String condtition) {
-        addToken(fieldType.name().toLowerCase(), key, condtition);
+    public void addField(FieldType fieldType, SearchFilterKey key, String constraintValue) {
+        addToken(fieldType.name().toLowerCase(), key, constraintValue);
     }
 
-    public void addField(SearchableField field, SearchFilterKey key, String condtition) {
-        addToken(field.getParameterName(), key, condtition);
+    public void addField(SearchableField field, SearchFilterKey key, String constraintValue) {
+        addToken(field.getParameterName(), key, constraintValue);
     }
 
-    private void addToken(String fieldName, SearchFilterKey key, String condtition) {
-        addToken(new CustomizerToken(fieldName, key.getKey(), condtition));
+    private void addToken(String fieldName, SearchFilterKey key, String constraintValue) {
+        addToken(new CustomizerToken(fieldName, key.getKey(), constraintValue));
     }
 
     @Override
     public boolean isFieldAllowed(String fieldName) {
-        return !fieldName.equals(FieldType.NAME.name().toLowerCase());
+        return SEARCHABLE_FIELDS.contains(fieldName);
     }
 
     @Override
@@ -51,6 +69,22 @@ public class SearchFilter extends RequestCustomizer {
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * Verify that, only SearchableField and FieldTypes(except NAME ) can be searched for
+     */
+    private static List<String> searchableFields() {
+        List<String> searchableFields = new ArrayList<>();
+        for (FieldType fieldType : FieldType.values()) {
+            if (!fieldType.equals(NAME)) {
+                searchableFields.add(fieldType.name().toLowerCase());
+            }
+        }
+        for (SearchableField searchableField : SearchableField.values()) {
+            searchableFields.add(searchableField.getParameterName());
+        }
+        return searchableFields;
     }
 
     public static enum SearchableField {
@@ -85,7 +119,7 @@ public class SearchFilter extends RequestCustomizer {
             return parameterName;
         }
     }
-
+    //TODO:rename to SearchFilterConstraint
     public static enum SearchFilterKey {
         /**
          * Case-insensitive comparison of a Contact Object's field value with the given value of
