@@ -17,6 +17,33 @@ Yahoo (about 700 characters), so you need to copy the original JdbcUsersConnecti
 the max length of the **accessToken** column (you can go for 1000 max length)
 - you can give spring-social-yahoo a try by cloning the forked repo of spring-social-samples, available on my account
 at https://github.com/gabrielruiu/spring-social-samples/tree/master/spring-social-quickstart
+- most classes contain links to the Yahoo documentation website
+
+# Tips
+- if you want to build a filter for the Contacts resource (see *ContactsFilter*), you will most likely be using
+several enums to construct it:
+
+```java
+ContactsFilter filter = new ContactsFilter()
+        .withAndFilter(FieldType.EMAIL, SearchFilter.SearchFilterKey.PRESENT, "1")
+        .sortBy(FieldType.EMAIL)
+        .sortOrder(SortOrder.Order.DESC);
+Contacts contacts = yahoo.contactsOperations().getContacts(filter);
+```
+These enums can take up some space on a single line, so to reduce the clutter, use static imports for each enum:
+
+```java
+import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.PRESENT;
+import static org.springframework.social.yahoo.filter.SortOrder.Order.DESC;
+import static org.springframework.social.yahoo.module.FieldType.EMAIL;
+
+///other code
+ContactsFilter filter = new ContactsFilter()
+        .withAndFilter(EMAIL, PRESENT, "1")
+        .sortBy(EMAIL)
+        .sortOrder(DESC);
+Contacts contacts = yahoo.contactsOperations().getContacts(filter);
+```
 
 ## At the time of writing (December 2014)
 - the [documentation website](https://developer.yahoo.com/social/rest_api_guide/ysp_api_book.html) crashes from time to time and cannot be accessed, it comes and goes
