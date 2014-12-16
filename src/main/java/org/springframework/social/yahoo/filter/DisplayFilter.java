@@ -9,6 +9,9 @@ import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUA
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
 
 /**
+ * Implementation of {@link RequestCustomizer} that builds a filter for the Contacts resource, such that only
+ * the specified fields will be retrieved for each Contact. The Contact object
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class DisplayFilter extends RequestCustomizer {
@@ -35,12 +38,14 @@ public class DisplayFilter extends RequestCustomizer {
     @Override
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
-        sb.append(DISPLAY_FILTER_KEY).append(SYMBOL_EQUALS);
-        List<CustomizerToken> tokens = getTokens();
-        for (CustomizerToken token : tokens) {
-            sb.append(token.getValue());
-            if (shouldAddTokenSeparator(tokens, token)) {
-                sb.append(SYMBOL_COMMA);
+        if (hasTokens()) {
+            sb.append(DISPLAY_FILTER_KEY).append(SYMBOL_EQUALS);
+            List<CustomizerToken> tokens = getTokens();
+            for (CustomizerToken token : tokens) {
+                sb.append(token.getValue());
+                if (shouldAddTokenSeparator(tokens, token)) {
+                    sb.append(SYMBOL_COMMA);
+                }
             }
         }
         return sb.toString();
