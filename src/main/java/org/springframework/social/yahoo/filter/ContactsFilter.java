@@ -1,25 +1,21 @@
 package org.springframework.social.yahoo.filter;
 
+import org.springframework.social.yahoo.api.ContactsOperations;
+import org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey;
+import org.springframework.social.yahoo.filter.SearchFilter.SearchableField;
+import org.springframework.social.yahoo.filter.SortFields.SortableField;
 import org.springframework.social.yahoo.module.FieldType;
 
 import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_COMMA;
 import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
 
 /**
- * Filters can only be used when calling the HTTP GET method of the Contacts URI.
- * If you call GET without a filter, you get a response including all of the contacts
- * from the authenticated user's list of contacts.
+ * Convenience class that unites all of the classes which are responsible for building request parameters which
+ * either filter or sort Contact objects.
+ * This can only be used when request the Contacts resource.
  *
- * If you call GET with a search filter, you get a response including a subset of the
- * authenticated user's contacts.
+ * @see {@link ContactsOperations#getContacts(ContactsFilter)}
  *
- * Display filtering allows you to select specific information for each returned contact.
- *
- * Search and display filtering can be used independently or conjunctively.
- * Filters use criteria that include two components: a predefined set of keys and user-defined
- * values.
- *
- * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contacts_resource-filters.html">Contact filtering</a>
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class ContactsFilter {
@@ -30,59 +26,103 @@ public class ContactsFilter {
     private SortOrder sortOrder = new SortOrder();
     private DisplayFilter displayFilter = new DisplayFilter();
 
+    /**
+     * Only those contacts which respect AT LEAST ONE of the conditions will be added to the response.
+     * Can be combined with:
+     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
+     */
     public ContactsFilter withOrFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
         orSearchFilter.addField(fieldType, key, condition);
         return this;
     }
 
-    public ContactsFilter withOrFilter(SearchFilter.SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
+    /**
+     * Only those contacts which respect AT LEAST ONE of the conditions will be added to the response.
+     * Can be combined with:
+     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
+     */
+    public ContactsFilter withOrFilter(SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
         orSearchFilter.addField(field, key, condition);
         return this;
     }
 
-    public ContactsFilter withAndFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
+    /**
+     * Only those contacts which respect ALL of the conditions will be added to the response.
+     * Can be combined with:
+     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
+     */
+    public ContactsFilter withAndFilter(FieldType fieldType, SearchFilterKey key, String condition) {
         andSearchFilter.addField(fieldType, key, condition);
         return this;
     }
 
-    public ContactsFilter withAndFilter(SearchFilter.SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
+    /**
+     * Only those contacts which respect ALL of the conditions will be added to the response.
+     * Can be combined with:
+     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
+     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
+     */
+    public ContactsFilter withAndFilter(SearchableField field, SearchFilterKey key, String condition) {
         andSearchFilter.addField(field, key, condition);
         return this;
     }
 
-
+    /**
+     * Only the specified fields are retrieved for each Contact object, no matter if there are other non-empty fields.
+     */
     public ContactsFilter displaySelectedFields(FieldType... fieldTypes) {
         displayFilter.addFields(fieldTypes);
         return this;
     }
 
+    /**
+     * All fields from a Contact object, which have a non-empty value, are included in the response.
+     */
     public ContactsFilter displayAllFields() {
         displayFilter.addAllFields();
         return this;
     }
 
+    /**
+     * Specifies by which fields the Contacts should be ordered; FieldType.NAME and FieldType.ADDRESS are not allowed
+     * when sorting.
+     * If you want to sort by name, use {@link SortableField}.
+     * Can be combined with {@link #sortBy(SortableField...)}
+     */
     public ContactsFilter sortBy(FieldType... fieldTypes) {
         sortFields.addFields(fieldTypes);
         return this;
     }
 
-    public ContactsFilter sortBy(SortFields.SortableField... sortableFields) {
+    /**
+     * Specifies by which fields the Contacts should be ordered; all {@link SortableField}s are allowed.
+     * Can be combined with {@link #sortBy(FieldType...)}
+     */
+    public ContactsFilter sortBy(SortableField... sortableFields) {
         sortFields.addFields(sortableFields);
         return this;
     }
 
     /**
-     * When requesting a Contacts resource, the order of the Contact objects can be
-     * specified using the 'sort' key, which can be either 'asc' (default) and 'desc'.
-     *
-     * The 'sort' key needs to be accompanied by the 'sort-fields' key, which specifies the fields
-     * by which the sort is made.
+     * Order ascending or descending the Contacts.
+     * Must be accompanied by calls to {@link #sortBy(FieldType...)} or {@link #sortBy(SortableField...)}
      */
     public ContactsFilter sortOrder(SortOrder.Order order) {
         sortOrder.setOrder(order);
         return this;
     }
 
+    /**
+     * Concatenates each of the request parameters built by each filter, which is then appended to the request for
+     * the Contacts resource
+     */
     public String build() {
         StringBuilder sb = new StringBuilder();
         if (orSearchFilter.hasTokens()) {
@@ -106,5 +146,4 @@ public class ContactsFilter {
         }
         return sb.toString();
     }
-
 }
