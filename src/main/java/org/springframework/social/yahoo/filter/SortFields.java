@@ -10,6 +10,16 @@ import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_EQUALS;
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
 
 /**
+ * When sorting a Contacts resource, the order, in which the Contact objects appear, can be specified
+ * through one or more Fields.
+ *
+ * Whether the order is ascending or descending, is specified through the SortOrder class.
+ *
+ * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
+ * @see {@link ContactsFilter#sortBy(FieldType...)}
+ * @see {@link ContactsFilter#sortBy(SortableField...)}
+ * @see {@link SortOrder}
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SortFields extends ContactsRequestCustomizer {

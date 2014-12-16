@@ -3,14 +3,14 @@ package org.springframework.social.yahoo.filter;
 import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_EQUALS;
 
 /**
- * When requesting a Contacts resource, the order of the Contact objects can be
- * specified using the 'sort' key, which can be either 'asc' (default) and 'desc'.
+ * When sorting a Contacts resource, the order, in which the Contact objects appear, can be specified
+ * through one or more Fields.
  *
- * The 'sort' key needs to be accompanied by the 'sort-fields' key, which specifies the fields
- * by which the sort is made.
+ * Whether the order is ascending or descending, is specified through the SortOrder class.
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
- * @see {@link ContactsFilter#setOrder(Order))
+ * @see {@link ContactsFilter#sortOrder(Order))
+ * @see {@link SortFields}
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
