@@ -2,8 +2,8 @@ package org.springframework.social.yahoo.filter;
 
 import org.springframework.social.yahoo.module.FieldType;
 
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_COMMA;
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_SEMICOLON;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_COMMA;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
 
 /**
  * Filters can only be used when calling the HTTP GET method of the Contacts URI.

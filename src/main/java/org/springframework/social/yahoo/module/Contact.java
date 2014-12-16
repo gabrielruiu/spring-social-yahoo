@@ -19,7 +19,10 @@ package org.springframework.social.yahoo.module;
 import java.util.Date;
 import java.util.List;
 
-import static org.springframework.social.yahoo.module.ContactFieldUtils.*;
+import static org.springframework.social.yahoo.module.ContactFieldUtils.getAddressValue;
+import static org.springframework.social.yahoo.module.ContactFieldUtils.getDateValue;
+import static org.springframework.social.yahoo.module.ContactFieldUtils.getNameValue;
+import static org.springframework.social.yahoo.module.ContactFieldUtils.getValueFromSingleValueField;
 
 /**
  * A contact resource contains information about a user who is known, perhaps through

@@ -18,7 +18,12 @@ package org.springframework.social.yahoo.api.impl;
 
 import org.springframework.social.yahoo.api.ContactsOperations;
 import org.springframework.social.yahoo.filter.ContactsFilter;
-import org.springframework.social.yahoo.module.*;
+import org.springframework.social.yahoo.module.CategoriesWrapper;
+import org.springframework.social.yahoo.module.Category;
+import org.springframework.social.yahoo.module.Contact;
+import org.springframework.social.yahoo.module.ContactWrapper;
+import org.springframework.social.yahoo.module.Contacts;
+import org.springframework.social.yahoo.module.ContactsWrapper;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;

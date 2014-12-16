@@ -5,9 +5,9 @@ import org.springframework.social.yahoo.module.FieldType;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_EQUALS;
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_PERIOD;
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_SEMICOLON;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_EQUALS;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_PERIOD;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
 import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
 import static org.springframework.social.yahoo.module.FieldType.NAME;
 

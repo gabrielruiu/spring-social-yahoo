@@ -20,8 +20,8 @@ import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterK
 import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.IS;
 import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.PRESENT;
 import static org.springframework.social.yahoo.filter.SearchFilter.SearchableField.CATEGORY;
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_COMMA;
-import static org.springframework.social.yahoo.filter.TokenConstants.SYMBOL_SEMICOLON;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_COMMA;
+import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
 import static org.springframework.social.yahoo.module.FieldType.EMAIL;
 import static org.springframework.social.yahoo.module.FieldType.NAME;
 

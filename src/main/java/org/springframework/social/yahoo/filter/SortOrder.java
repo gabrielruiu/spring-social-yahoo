@@ -32,7 +32,7 @@ public class SortOrder extends RequestCustomizer {
     public String toRequest() {
         StringBuilder sb = new StringBuilder();
         if (hasTokens()) {
-            sb.append(SORT_ORDER_KEY).append(TokenConstants.SYMBOL_EQUALS);
+            sb.append(SORT_ORDER_KEY).append(TokenUtils.SYMBOL_EQUALS);
             sb.append(getTokens().get(0).getValue());
         }
         return sb.toString();
