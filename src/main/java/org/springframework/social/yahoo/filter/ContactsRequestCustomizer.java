@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Parent class used to construct request parameters for filtering and
+ * Parent class used for constructing request parameters for filtering and
  * sorting calls to the Contacts API.
+ *
+ * @see {@link DisplayFilter}
+ * @see {@link SearchFilter}
+ * @see {@link SortOrder}
+ * @see {@link SortFields}
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
