@@ -12,7 +12,7 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
 import static org.springframework.social.yahoo.module.FieldType.NAME;
 
 /**
- * Implementation of {@link RequestCustomizer} that builds a filter for the Contacts resource, such that only
+ * Implementation of {@link ContactsRequestCustomizer} that builds a filter for the Contacts resource, such that only
  * those contacts which respect the conditions, will be returned from the Yahoo Contacts API.
  *
  * There are two types of SearchFilters
@@ -21,7 +21,7 @@ import static org.springframework.social.yahoo.module.FieldType.NAME;
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-public class SearchFilter extends RequestCustomizer {
+public class SearchFilter extends ContactsRequestCustomizer {
 
     private static final List<String> SEARCHABLE_FIELDS = searchableFields();
     private String tokenSeparator;

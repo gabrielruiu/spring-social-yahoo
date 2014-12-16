@@ -1,7 +1,7 @@
 package org.springframework.social.yahoo.test.filter;
 
 import org.junit.Test;
-import org.springframework.social.yahoo.filter.RequestCustomizer;
+import org.springframework.social.yahoo.filter.ContactsRequestCustomizer;
 import org.springframework.social.yahoo.filter.SortOrder;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -9,8 +9,8 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 
 /**
- * Test class that verifies if the {@link SortOrder} implementation of the {@link RequestCustomizer} properly builds
- * requests for setting the sorting order.
+ * Test class that verifies if the {@link SortOrder} implementation of the {@link ContactsRequestCustomizer} properly
+ * builds requests for setting the sorting order.
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
  * @see {@link SortOrder}

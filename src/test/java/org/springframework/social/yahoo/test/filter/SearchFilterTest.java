@@ -6,7 +6,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.social.yahoo.filter.RequestCustomizer;
+import org.springframework.social.yahoo.filter.ContactsRequestCustomizer;
 import org.springframework.social.yahoo.filter.SearchFilter;
 import org.springframework.social.yahoo.filter.SearchFilter.SearchableField;
 import org.springframework.social.yahoo.module.FieldType;
@@ -26,8 +26,8 @@ import static org.springframework.social.yahoo.module.FieldType.EMAIL;
 import static org.springframework.social.yahoo.module.FieldType.NAME;
 
 /**
- * Test class that verifies if the {@link SearchFilter} implementation of {@link RequestCustomizer} properly builds
- * requests for filtering the Contacts resource and that only valid fields can be used to construct the
+ * Test class that verifies if the {@link SearchFilter} implementation of {@link ContactsRequestCustomizer} properly
+ * builds requests for filtering the Contacts resource and that only valid fields can be used to construct the
  * request, as outlined in the Yahoo documentation for search filtering
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contacts_resource-filters.html">Filtering</a>

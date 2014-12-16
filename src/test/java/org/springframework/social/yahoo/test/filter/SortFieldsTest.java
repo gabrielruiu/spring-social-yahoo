@@ -6,7 +6,7 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.social.yahoo.filter.RequestCustomizer;
+import org.springframework.social.yahoo.filter.ContactsRequestCustomizer;
 import org.springframework.social.yahoo.filter.SortFields;
 import org.springframework.social.yahoo.filter.SortFields.SortableField;
 import org.springframework.social.yahoo.module.FieldType;
@@ -26,8 +26,8 @@ import static org.springframework.social.yahoo.module.FieldType.YAHOOID;
 
 
 /**
- * Test class that verifies if the {@link SortFields} implementation of the {@link RequestCustomizer} properly builds
- * requests for sorting by certain fields, and that only valid fields can be used to construct the request, as outlined
+ * Test class that verifies if the {@link SortFields} implementation of the {@link ContactsRequestCustomizer} properly
+ * builds requests for sorting by certain fields, and that only valid fields can be used to construct the request, as outlined
  * in the Yahoo documentation for sorting
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>

@@ -12,7 +12,7 @@ package org.springframework.social.yahoo.filter;
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-public class SortOrder extends RequestCustomizer {
+public class SortOrder extends ContactsRequestCustomizer {
 
     private static final String SORT_ORDER_KEY = "sort";
 

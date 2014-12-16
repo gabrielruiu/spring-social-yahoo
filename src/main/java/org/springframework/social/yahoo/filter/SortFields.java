@@ -12,7 +12,7 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
 /**
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-public class SortFields extends RequestCustomizer {
+public class SortFields extends ContactsRequestCustomizer {
 
     private static final String SORT_FIELDS_KEY = "sort-fields";
     private static final List<String> SORTABLE_FIELDS = sortableFields();
