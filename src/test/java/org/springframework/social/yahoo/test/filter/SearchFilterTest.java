@@ -16,9 +16,9 @@ import java.util.Collection;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.CS_CONTAINS;
-import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.IS;
-import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.PRESENT;
+import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint.CS_CONTAINS;
+import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint.IS;
+import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint.PRESENT;
 import static org.springframework.social.yahoo.filter.SearchFilter.SearchableField.CATEGORY;
 import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_COMMA;
 import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;

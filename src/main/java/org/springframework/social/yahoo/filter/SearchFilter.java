@@ -37,15 +37,15 @@ public class SearchFilter extends ContactsRequestCustomizer {
         this.tokenSeparator = tokenSeparator;
     }
 
-    public void addField(FieldType fieldType, SearchFilterKey key, String constraintValue) {
+    public void addField(FieldType fieldType, SearchFilterConstraint key, String constraintValue) {
         addToken(fieldType.name().toLowerCase(), key, constraintValue);
     }
 
-    public void addField(SearchableField field, SearchFilterKey key, String constraintValue) {
+    public void addField(SearchableField field, SearchFilterConstraint key, String constraintValue) {
         addToken(field.getParameterName(), key, constraintValue);
     }
 
-    private void addToken(String fieldName, SearchFilterKey key, String constraintValue) {
+    private void addToken(String fieldName, SearchFilterConstraint key, String constraintValue) {
         addToken(new CustomizerToken(fieldName, key.getKey(), constraintValue));
     }
 
@@ -121,8 +121,7 @@ public class SearchFilter extends ContactsRequestCustomizer {
             return parameterName;
         }
     }
-    //TODO:rename to SearchFilterConstraint
-    public static enum SearchFilterKey {
+    public static enum SearchFilterConstraint {
         /**
          * Case-insensitive comparison of a Contact Object's field value with the given value of
          * the search criteria
@@ -161,7 +160,7 @@ public class SearchFilter extends ContactsRequestCustomizer {
 
         private String key;
 
-        SearchFilterKey(String key) {
+        SearchFilterConstraint(String key) {
             this.key = key;
         }
 

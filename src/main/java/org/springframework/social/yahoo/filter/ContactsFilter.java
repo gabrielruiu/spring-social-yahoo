@@ -1,7 +1,7 @@
 package org.springframework.social.yahoo.filter;
 
 import org.springframework.social.yahoo.api.ContactsOperations;
-import org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey;
+import org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint;
 import org.springframework.social.yahoo.filter.SearchFilter.SearchableField;
 import org.springframework.social.yahoo.filter.SortFields.SortableField;
 import org.springframework.social.yahoo.module.FieldType;
@@ -29,11 +29,11 @@ public class ContactsFilter {
     /**
      * Only those contacts which respect AT LEAST ONE of the conditions will be added to the response.
      * Can be combined with:
-     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
-     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withOrFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withAndFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withAndFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
      */
-    public ContactsFilter withOrFilter(FieldType fieldType, SearchFilter.SearchFilterKey key, String condition) {
+    public ContactsFilter withOrFilter(FieldType fieldType, SearchFilterConstraint key, String condition) {
         orSearchFilter.addField(fieldType, key, condition);
         return this;
     }
@@ -41,11 +41,11 @@ public class ContactsFilter {
     /**
      * Only those contacts which respect AT LEAST ONE of the conditions will be added to the response.
      * Can be combined with:
-     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withOrFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withAndFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withAndFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
      */
-    public ContactsFilter withOrFilter(SearchableField field, SearchFilter.SearchFilterKey key, String condition) {
+    public ContactsFilter withOrFilter(SearchableField field, SearchFilterConstraint key, String condition) {
         orSearchFilter.addField(field, key, condition);
         return this;
     }
@@ -53,11 +53,11 @@ public class ContactsFilter {
     /**
      * Only those contacts which respect ALL of the conditions will be added to the response.
      * Can be combined with:
-     *    {@link #withAndFilter(SearchableField, SearchFilterKey, String)}
-     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withAndFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withOrFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withOrFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
      */
-    public ContactsFilter withAndFilter(FieldType fieldType, SearchFilterKey key, String condition) {
+    public ContactsFilter withAndFilter(FieldType fieldType, SearchFilterConstraint key, String condition) {
         andSearchFilter.addField(fieldType, key, condition);
         return this;
     }
@@ -65,11 +65,11 @@ public class ContactsFilter {
     /**
      * Only those contacts which respect ALL of the conditions will be added to the response.
      * Can be combined with:
-     *    {@link #withAndFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withOrFilter(FieldType, SearchFilterKey, String)}
-     *    {@link #withOrFilter(SearchableField, SearchFilterKey, String)}
+     *    {@link #withAndFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withOrFilter(FieldType, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
+     *    {@link #withOrFilter(SearchableField, org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint, String)}
      */
-    public ContactsFilter withAndFilter(SearchableField field, SearchFilterKey key, String condition) {
+    public ContactsFilter withAndFilter(SearchableField field, SearchFilterConstraint key, String condition) {
         andSearchFilter.addField(field, key, condition);
         return this;
     }

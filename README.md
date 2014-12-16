@@ -34,7 +34,7 @@ Contacts contacts = yahoo.contactsOperations().getContacts(filter);
 These enums can take up some space on a single line, so to reduce the clutter, use static imports for each enum:
 
 ```java
-import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterKey.PRESENT;
+import static org.springframework.social.yahoo.filter.SearchFilter.SearchFilterConstraint.PRESENT;
 import static org.springframework.social.yahoo.filter.SortOrder.Order.DESC;
 import static org.springframework.social.yahoo.module.FieldType.EMAIL;
 
