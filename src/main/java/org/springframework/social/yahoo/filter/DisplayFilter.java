@@ -10,7 +10,10 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
 
 /**
  * Implementation of {@link ContactsRequestCustomizer} that builds a filter for the Contacts resource, such that only
- * the specified fields will be retrieved for each Contact. The Contact object
+ * the specified fields will be retrieved for each Contact, no matter if the Contact object has other non-empty fields.
+ *
+ * @see {@link ContactsFilter#displaySelectedFields(FieldType...)}
+ * @see {@link ContactsFilter#displayAllFields()}
  *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */

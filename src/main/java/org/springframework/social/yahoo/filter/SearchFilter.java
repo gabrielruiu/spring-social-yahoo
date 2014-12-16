@@ -19,6 +19,19 @@ import static org.springframework.social.yahoo.module.FieldType.NAME;
  * - AND search filter
  * - OR search filter
  *
+ * The AND search filter constructs the request parameters such that, only those Contacts which respect ALL of the
+ * conditions will be included in the response.
+ *
+ * The OR search filter constructs the request parameters such that, only those Contacts which respect AT LEAST ONE of
+ * the conditions will be included in the response.
+ *
+ * Both types of filters can be combined.
+ *
+ * @see {@link ContactsFilter#withAndFilter(FieldType, SearchFilterConstraint, String)}
+ * @see {@link ContactsFilter#withAndFilter(SearchableField, SearchFilterConstraint, String)}
+ * @see {@link ContactsFilter#withOrFilter(FieldType, SearchFilterConstraint, String)}
+ * @see {@link ContactsFilter#withOrFilter(SearchableField, SearchFilterConstraint, String)}
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SearchFilter extends ContactsRequestCustomizer {
