@@ -56,9 +56,7 @@ public class SortFields extends RequestCustomizer {
     }
 
     /**
-     * Verify only that, if a FieldType is added, it is not of type NAME or ADDRESS.
-     * The other allowable fields are of type {@link SortableField} which are implicitly
-     * enforced through the {@link #addFields(SortableField...)}
+     * Verify that, only SortableField and FieldTypes(except NAME or ADDRESS) can be sorted by
      */
     private static List<String> sortableFields() {
         List<String> sortableFields = new ArrayList<>();
