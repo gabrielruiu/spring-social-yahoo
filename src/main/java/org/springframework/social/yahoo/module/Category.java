@@ -18,7 +18,7 @@ package org.springframework.social.yahoo.module;
 import java.util.Date;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class Category extends YahooObject {
 

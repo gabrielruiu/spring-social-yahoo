@@ -18,7 +18,7 @@ package org.springframework.social.yahoo.module;
 /**
  * Used for birthday and anniversary fields.
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class DateFieldValue extends FieldValue {
 

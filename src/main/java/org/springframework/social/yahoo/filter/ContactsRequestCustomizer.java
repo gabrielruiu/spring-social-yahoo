@@ -35,7 +35,7 @@ import java.util.List;
  *
  * @see {@link ContactsFilter}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public abstract class ContactsRequestCustomizer {
 

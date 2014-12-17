@@ -18,7 +18,7 @@ package org.springframework.social.yahoo.module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooModule extends SimpleModule {
 

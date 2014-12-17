@@ -28,7 +28,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class ContactsTemplate extends AbstractYahooOperations implements ContactsOperations {
 

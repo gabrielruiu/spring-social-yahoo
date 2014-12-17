@@ -18,7 +18,7 @@ package org.springframework.social.yahoo.connect;
 import org.springframework.social.oauth1.OAuthToken;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooOAuthToken extends OAuthToken {
 

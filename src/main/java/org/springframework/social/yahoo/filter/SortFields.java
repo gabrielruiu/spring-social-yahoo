@@ -35,7 +35,7 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
  * @see {@link ContactsFilter#sortBy(SortableField...)}
  * @see {@link SortOrder}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SortFields extends ContactsRequestCustomizer {
 

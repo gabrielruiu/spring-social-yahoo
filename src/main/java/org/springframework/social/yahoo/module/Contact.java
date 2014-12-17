@@ -32,7 +32,7 @@ import static org.springframework.social.yahoo.module.ContactFieldUtils.getValue
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contact-resource.html">Contact resource</a>
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class Contact extends YahooObject {
 

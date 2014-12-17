@@ -30,7 +30,7 @@ import static org.hamcrest.Matchers.is;
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/sorting.html">Sorting</a>
  * @see {@link SortOrder}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SortOrderTest {
 

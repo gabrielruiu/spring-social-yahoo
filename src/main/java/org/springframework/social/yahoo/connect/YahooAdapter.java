@@ -21,7 +21,7 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.yahoo.api.Yahoo;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 //TODO: implement YahooAdapter
 public class YahooAdapter implements ApiAdapter<Yahoo> {

@@ -31,7 +31,7 @@ import org.springframework.util.MultiValueMap;
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/introspective-guid-resource.html">GUID</a>
  * @see {@link org.springframework.social.yahoo.api.impl.AbstractYahooOperations}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooOAuthTemplate extends OAuth1Template {
 

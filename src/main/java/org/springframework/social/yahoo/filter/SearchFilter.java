@@ -47,7 +47,7 @@ import static org.springframework.social.yahoo.module.FieldType.NAME;
  * @see {@link ContactsFilter#withOrFilter(FieldType, SearchFilterConstraint, String)}
  * @see {@link ContactsFilter#withOrFilter(SearchableField, SearchFilterConstraint, String)}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SearchFilter extends ContactsRequestCustomizer {
 

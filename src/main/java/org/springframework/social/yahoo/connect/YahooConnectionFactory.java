@@ -20,7 +20,7 @@ import org.springframework.social.oauth1.OAuthToken;
 import org.springframework.social.yahoo.api.Yahoo;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooConnectionFactory extends OAuth1ConnectionFactory<Yahoo> {
 

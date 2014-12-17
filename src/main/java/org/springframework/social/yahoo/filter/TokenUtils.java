@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Utility class for helping with general operations with tokens
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class TokenUtils {
 

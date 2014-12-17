@@ -16,7 +16,7 @@
 package org.springframework.social.yahoo.module;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public enum FieldFlag {
 

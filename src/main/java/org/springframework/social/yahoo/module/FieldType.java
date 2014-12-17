@@ -18,7 +18,7 @@ package org.springframework.social.yahoo.module;
 /**
  * Each Field object is accompanied by a specified type.
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public enum FieldType {
 

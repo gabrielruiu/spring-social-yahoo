@@ -20,7 +20,7 @@ import org.springframework.social.yahoo.api.Yahoo;
 import org.springframework.social.yahoo.api.impl.YahooTemplate;
 
 /**
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooServiceProvider extends AbstractOAuth1ServiceProvider<Yahoo> {
 

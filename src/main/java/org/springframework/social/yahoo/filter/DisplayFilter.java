@@ -30,7 +30,7 @@ import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenS
  * @see {@link ContactsFilter#displaySelectedFields(FieldType...)}
  * @see {@link ContactsFilter#displayAllFields()}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class DisplayFilter extends ContactsRequestCustomizer {
 

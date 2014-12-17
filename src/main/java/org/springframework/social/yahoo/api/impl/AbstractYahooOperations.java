@@ -26,7 +26,7 @@ import java.util.Arrays;
 /**
  * Base class for all operations performed against the Yahoo Social API.
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 abstract class AbstractYahooOperations {
 

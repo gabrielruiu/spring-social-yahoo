@@ -27,7 +27,7 @@ import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_EQUALS;
  * @see {@link ContactsFilter#sortOrder(Order))
  * @see {@link SortFields}
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class SortOrder extends ContactsRequestCustomizer {
 

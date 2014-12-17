@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contact_api.html">Contacts API</a>
  *
- * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
+ * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface ContactsOperations {
 
