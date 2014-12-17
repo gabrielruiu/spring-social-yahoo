@@ -52,16 +52,9 @@ dependencies {
 }
 
 configure(allprojects) {
-
     jar {
         manifest.attributes['Implementation-Title'] = rootProject.name
         manifest.attributes['Implementation-Version'] = rootProject.version
-
-        from("${rootProject.projectDir}") {
-            include "LICENSE"
-            into "META-INF"
-            expand(yyyy: new Date().format('yyyy'), owner: "Gabriel Ruiu")
-        }
     }
 }
 
