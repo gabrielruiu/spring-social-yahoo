@@ -23,6 +23,4 @@ import org.springframework.social.ApiBinding;
 public interface Yahoo extends ApiBinding {
 
     ContactsOperations contactsOperations();
-
-    SocialDirectoryOperations socialDirectoryOperations();
 }

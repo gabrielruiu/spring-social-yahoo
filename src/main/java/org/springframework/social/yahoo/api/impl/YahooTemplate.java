@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 import org.springframework.social.yahoo.api.ContactsOperations;
-import org.springframework.social.yahoo.api.SocialDirectoryOperations;
 import org.springframework.social.yahoo.api.Yahoo;
 import org.springframework.social.yahoo.module.YahooModule;
 import org.springframework.web.client.RestTemplate;
@@ -32,7 +31,6 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
     private String guid;
     private ContactsOperations contactsOperations;
-    private SocialDirectoryOperations socialDirectoryOperations;
 
     public YahooTemplate(String consumerKey, String consumerSecret,
                          String accessToken, String accessTokenSecret, String guid) {
@@ -43,10 +41,6 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
     public ContactsOperations contactsOperations() {
         return contactsOperations;
-    }
-
-    public SocialDirectoryOperations socialDirectoryOperations() {
-        return socialDirectoryOperations;
     }
 
     @Override
@@ -63,7 +57,6 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
     protected void initSubApis() {
         this.contactsOperations = new ContactsTemplate(getRestTemplate(), isAuthorized(), guid);
-        this.socialDirectoryOperations = new SocialDirectoryTemplate(getRestTemplate(), isAuthorized(), guid);
     }
 
     protected ObjectMapper createObjectMapper() {

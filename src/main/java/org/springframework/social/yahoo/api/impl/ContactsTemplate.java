@@ -40,30 +40,37 @@ public class ContactsTemplate extends AbstractYahooOperations implements Contact
     }
 
     public Contacts getContacts() {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri("/contacts"), ContactsWrapper.class).getContacts();
     }
 
     public Contacts getContacts(ContactsFilter filter) {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri(String.format("/contacts;%s", filter.build())), ContactsWrapper.class).getContacts();
     }
 
     public Contacts getContactsByCategory(String categoryName) {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri(String.format("/category/%s/contacts", categoryName)), ContactsWrapper.class).getContacts();
     }
 
     public Contact getContact(int contactCid) {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri(String.format("/contact/%d", contactCid)), ContactWrapper.class).getContact();
     }
 
     public void addCategory(Category category) {
+        requiresAuthorization();
         restTemplate.postForObject(buildUri("/categories"), category, Void.class);
     }
 
     public List<Category> getCategories() {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri("/categories"), CategoriesWrapper.class).getCategories().getCategory();
     }
 
     public List<Category> getCategoriesByContactCid(int contactCid) {
+        requiresAuthorization();
         return restTemplate.getForObject(buildUri(String.format("/contact/%d/categories", contactCid)), CategoriesWrapper.class).getCategories().getCategory();
     }
 }

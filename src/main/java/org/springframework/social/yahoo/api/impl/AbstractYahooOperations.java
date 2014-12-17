@@ -15,6 +15,7 @@
  */
 package org.springframework.social.yahoo.api.impl;
 
+import org.springframework.social.NotAuthorizedException;
 import org.springframework.social.support.URIBuilder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -23,9 +24,10 @@ import java.net.URI;
 import java.util.Arrays;
 
 /**
+ * Base class for all operations performed against the Yahoo Social API.
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
-//TODO: isAppAuthorized, need to implement?
 abstract class AbstractYahooOperations {
 
     private static final String API_URL_BASE = "https://social.yahooapis.com/v1/user/%s";
@@ -37,6 +39,12 @@ abstract class AbstractYahooOperations {
     public AbstractYahooOperations(boolean isAuthorized, String guid) {
         this.isAuthorized = isAuthorized;
         this.guid = guid;
+    }
+
+    protected void requiresAuthorization() {
+        if (!isAuthorized) {
+            throw new NotAuthorizedException("yahoo", "app has not been authorized");
+        }
     }
 
     protected String getApiUrlBase() {
