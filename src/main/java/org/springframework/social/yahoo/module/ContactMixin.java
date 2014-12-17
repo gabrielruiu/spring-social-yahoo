@@ -15,6 +15,7 @@
  */
 package org.springframework.social.yahoo.module;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -40,4 +41,20 @@ abstract class ContactMixin extends YahooObjectMixin {
     @JsonProperty("fields") List<Field> fields;
 
     @JsonProperty("categories") List<Category> categories;
+
+    @JsonIgnore abstract String getEmail();
+    @JsonIgnore abstract String getGuid();
+    @JsonIgnore abstract String getYahooId();
+    @JsonIgnore abstract String getOtherId();
+    @JsonIgnore abstract String getCompany();
+    @JsonIgnore abstract String getNickName();
+    @JsonIgnore abstract String getPhone();
+    @JsonIgnore abstract String getJobTitle();
+    @JsonIgnore abstract String getNotes();
+    @JsonIgnore abstract String getLink();
+    @JsonIgnore abstract String getCustom();
+    @JsonIgnore abstract DateFieldValue getBirthday();
+    @JsonIgnore abstract DateFieldValue getAnniversary();
+    @JsonIgnore abstract NameFieldValue getName();
+    @JsonIgnore abstract AddressFieldValue getAddress();
 }
