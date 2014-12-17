@@ -18,6 +18,8 @@ package org.springframework.social.yahoo.module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
 /**
+ * Jackson module that maps mixins with Yahoo objects
+ *
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooModule extends SimpleModule {
