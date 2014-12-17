@@ -14,7 +14,19 @@
  *  limitations under the License.
  */
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
+    }
+}
+
+
 apply plugin: 'java'
+apply plugin: 'license'
 apply from: "${rootProject.projectDir}/publish-maven.gradle"
 
 group = 'org.springframework.social'
