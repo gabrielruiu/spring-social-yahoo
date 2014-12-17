@@ -21,6 +21,16 @@ import org.springframework.social.oauth1.OAuthToken;
 import org.springframework.util.MultiValueMap;
 
 /**
+ * Custom implementation of {@link OAuth1Template} that picks the extra headers from Yahoo during the
+ * OAuth flow, the most important of which is the users GUID.
+ *
+ * The GUID is mandatory for constructing subsequent calls/requests to the Yahoo API.
+ *
+ * @see <a href="https://developer.yahoo.com/oauth/guide/oauth-auth-flow.html">OAuth flow</a>
+ * @see <a href="https://developer.yahoo.com/oauth/guide/oauth-accesstoken.html">OAuth access token</a>
+ * @see <a href="https://developer.yahoo.com/social/rest_api_guide/introspective-guid-resource.html">GUID</a>
+ * @see {@link org.springframework.social.yahoo.api.impl.AbstractYahooOperations}
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public class YahooOAuthTemplate extends OAuth1Template {
