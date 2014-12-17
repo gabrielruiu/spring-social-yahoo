@@ -23,6 +23,10 @@ import org.springframework.social.yahoo.module.Contacts;
 import java.util.List;
 
 /**
+ * Main interface for interacting with the Contacts-part of the Yahoo Social API.
+ *
+ * @see <a href="https://developer.yahoo.com/social/rest_api_guide/contact_api.html">Contacts API</a>
+ *
  * Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface ContactsOperations {
