@@ -39,7 +39,7 @@ import java.util.List;
  */
 public abstract class ContactsRequestCustomizer {
 
-    public List<CustomizerToken> tokens = new ArrayList<>();
+    public List<CustomizerToken> tokens = new ArrayList<CustomizerToken>();
 
     protected final void addToken(CustomizerToken token) {
         if (isFieldAllowed(token.getFieldName())) {

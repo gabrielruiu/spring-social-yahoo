@@ -84,7 +84,7 @@ public class SortFields extends ContactsRequestCustomizer {
      * Verify that, only SortableField and FieldTypes(except NAME or ADDRESS) can be sorted by
      */
     private static List<String> sortableFields() {
-        List<String> sortableFields = new ArrayList<>();
+        List<String> sortableFields = new ArrayList<String>();
         for (FieldType type : FieldType.values()) {
             if (!(type.equals(FieldType.NAME) || type.equals(FieldType.ADDRESS))) {
                 sortableFields.add(type.name().toLowerCase());

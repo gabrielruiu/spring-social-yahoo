@@ -105,7 +105,7 @@ public class SearchFilter extends ContactsRequestCustomizer {
      * Only SearchableField and FieldTypes(except NAME) can be searched for
      */
     private static List<String> searchableFields() {
-        List<String> searchableFields = new ArrayList<>();
+        List<String> searchableFields = new ArrayList<String>();
         for (FieldType fieldType : FieldType.values()) {
             if (!fieldType.equals(NAME)) {
                 searchableFields.add(fieldType.name().toLowerCase());
