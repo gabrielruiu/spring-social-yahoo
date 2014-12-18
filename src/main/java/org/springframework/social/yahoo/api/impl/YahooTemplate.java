@@ -21,6 +21,8 @@ import org.springframework.social.oauth1.AbstractOAuth1ApiBinding;
 import org.springframework.social.yahoo.api.ContactsOperations;
 import org.springframework.social.yahoo.api.Yahoo;
 import org.springframework.social.yahoo.module.YahooModule;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -52,7 +54,11 @@ public class YahooTemplate extends AbstractOAuth1ApiBinding implements Yahoo {
 
     @Override
     protected void configureRestTemplate(RestTemplate restTemplate) {
-        restTemplate.setErrorHandler(new YahooErrorHandler());
+        restTemplate.setErrorHandler(errorHandler());
+    }
+
+    protected ResponseErrorHandler errorHandler() {
+        return new DefaultResponseErrorHandler();
     }
 
     protected void initSubApis() {
