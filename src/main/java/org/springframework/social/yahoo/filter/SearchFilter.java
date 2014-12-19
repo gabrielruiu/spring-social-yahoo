@@ -20,10 +20,7 @@ import org.springframework.social.yahoo.module.FieldType;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_EQUALS;
-import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_PERIOD;
-import static org.springframework.social.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
-import static org.springframework.social.yahoo.filter.TokenUtils.shouldAddTokenSeparator;
+import static org.springframework.social.yahoo.filter.TokenUtils.*;
 import static org.springframework.social.yahoo.module.FieldType.NAME;
 
 /**
@@ -149,6 +146,10 @@ public class SearchFilter extends ContactsRequestCustomizer {
             return parameterName;
         }
     }
+
+    /**
+     * The constraint the Contact object must respect in order to be returned in the response for the Contacts resource
+     */
     public static enum SearchFilterConstraint {
         /**
          * Case-insensitive comparison of a Contact Object's field value with the given value of
