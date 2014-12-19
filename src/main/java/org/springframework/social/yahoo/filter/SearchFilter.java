@@ -36,8 +36,17 @@ import static org.springframework.social.yahoo.module.FieldType.NAME;
  *
  * The OR search filter constructs the request parameters such that, only those Contacts which respect AT LEAST ONE of
  * the conditions will be included in the response.
+ * NOTE: you need to specify at least two OR search filters so the 'or' function is properly applied,
+ * otherwise it will be considered as an AND filter.
+ * Example:
+ * <code>
+ *     new ContactsFilters().withOrFilter(FieldType.EMAIL, SearchFilterConstraint.IS, "my_email@email.com")
+ *                          .withOrFilter(SearchableField.NAME_FAMILY_NAME, SearchFilterConstraint.PRESENT, "1");
+ * </code>
+ * This would create an OR filter that checks if the contact either has the email "my_email@email.com" or has
+ * a non-empty value for the field 'familyName'.
  *
- * Both types of filters can be combined.
+ * Both types of filters can be combined to create a composite filter.
  *
  * @see {@link ContactsFilter#withAndFilter(FieldType, SearchFilterConstraint, String)}
  * @see {@link ContactsFilter#withAndFilter(SearchableField, SearchFilterConstraint, String)}
@@ -114,6 +123,9 @@ public class SearchFilter extends ContactsRequestCustomizer {
         return searchableFields;
     }
 
+    /**
+     * Separate enum used to filter contacts.
+     */
     public static enum SearchableField {
 
         NAME_GIVEN_NAME("givenName"),
