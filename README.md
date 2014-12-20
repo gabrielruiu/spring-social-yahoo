@@ -1,5 +1,10 @@
-spring-social-yahoo  https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg
+spring-social-yahoo
 ===================
+
+
+[![Build Status](https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg)](https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg)
+
+This repository contains example projects for the different Spring Data modules to showcase the API and how to use the features provided by the modules.
 
 Spring Social Yahoo is an extension based on Spring Social that provides functionality to communicate with the Yahoo Social Rest API.
 You can find the full documentation at
