@@ -1,4 +1,4 @@
-spring-social-yahoo
+spring-social-yahoo  https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg
 ===================
 
 Spring Social Yahoo is an extension based on Spring Social that provides functionality to communicate with the Yahoo Social Rest API.
