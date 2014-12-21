@@ -22,7 +22,6 @@ import org.springframework.social.oauth1.OAuthToken;
  */
 public class YahooOAuthToken extends OAuthToken {
 
-    //TODO: create GUID object and link it to this field
     private String guid;
     /**
      * Lifetime of the Access Token in seconds (3600, or 1 hour).
