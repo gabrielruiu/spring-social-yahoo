@@ -31,15 +31,34 @@ import java.util.List;
  */
 public interface ContactsOperations {
 
+    /**
+     * Retrieves every contact which belongs to the currently logged in user
+     */
     Contacts getContacts();
 
+    /**
+     * Retrieves every contact which belongs to the currently logged in user and respects the filter constraints
+     * @see {@link org.springframework.social.yahoo.filter.ContactsFilter}
+     */
     Contacts getContacts(ContactsFilter filter);
 
+    /**
+     * Retrieves to contacts which belong to the given category
+     */
     Contacts getContactsByCategory(String categoryName);
 
+    /**
+     * Retrieves the contract with the given contact id
+     */
     Contact getContact(int contactCid);
 
+    /**
+     * Retrieves all the categories which belong to the currently logged in user
+     */
     List<Category> getCategories();
 
+    /**
+     * Retrieves the categories to which the contact (given by the contact id) belongs
+     */
     List<Category> getCategoriesByContactCid(int contactCid);
 }
