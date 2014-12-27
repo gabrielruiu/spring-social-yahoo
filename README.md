@@ -4,26 +4,33 @@ spring-social-yahoo
 
 [![Build Status](https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg)](https://travis-ci.org/gabrielruiu/spring-social-yahoo.svg)
 
-This repository contains example projects for the different Spring Data modules to showcase the API and how to use the features provided by the modules.
-
 Spring Social Yahoo is an extension based on Spring Social that provides functionality to communicate with the Yahoo Social Rest API.
 You can find the full documentation at
 [Yahoo's developer website](https://developer.yahoo.com/social/rest_api_guide/ysp_api_book.html).
+Before proceeding with using this library, please consult the **Notes** section.
+The best way to learn how use the library is to consult the [Spring Social documentation](http://docs.spring.io/spring-social/docs/current/reference/htmlsingle/) and
+apply those principles for the classes specific to Yahoo.
 
+**Do not hesitate to point out any issues and I am very open to suggestion, both in terms of implementation and documentation**
+
+# Changelist
+
+## 1.0.0.RELEASE
+- first version release
 
 # Notes
 
-- this library is still in DEVELOPMENT and is not yet usable in production
-- not all endpoints and functionalities will be implemented; if there are requests to implement some extras,
+- not all endpoints and functionalities are implemented from tha Yahoo Social API; if there are requests to implement some extras,
 please leave me a message and I will oblige with a response
 - when implementing a connection repository, note that the default JdbcUsersConnectionRepository.sql constructs a table
 whose max length for the access token is 255, which is less than the length of the token received from
 Yahoo (about 700 characters), so you need to copy the original JdbcUsersConnectionRepository.sql file and modify
 the max length of the **accessToken** column (you can go for 1000 max length)
-- you can give spring-social-yahoo a try by cloning the forked repo of spring-social-samples, available on my account
+- you can give *spring-social-yahoo* a try by cloning the forked repo of spring-social-samples, available on my account
 at https://github.com/gabrielruiu/spring-social-samples/tree/master/spring-social-quickstart
-- most classes contain links to the Yahoo documentation website
-- I would appreciate very much if you would take the time to give me a short email describing your usage of this library
+- most classes contain links to the Yahoo documentation website, so you can consult the information there as well
+- I would appreciate very much if you would take the time to give me a short email describing your usage of this library,
+just so I can get a feeling of how useful the library is
 
 # Tips
 - if you want to build a filter for the Contacts resource (see *ContactsFilter*), you will most likely be using
@@ -62,7 +69,7 @@ maintenance; see details [here](https://developer.yahoo.com/social/rest_api_guid
 
 - only JSON payloads are used
 - only the Contacts API is implemented
-
+- the following endpoints are implemented:
 
 | Resource | Methods | Notes
 | ------------- |-------------| ------ |
