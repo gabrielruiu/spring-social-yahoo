@@ -1,4 +1,5 @@
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 ext.optionalDeps = []
 ext.providedDeps = []
@@ -10,6 +11,28 @@ install {
     repositories.mavenInstaller {
         customizePom(pom, project)
     }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            customizePom(pom, project)
+        }
+    }
+}
+
+signing {
+    sign configurations.archives
 }
 
 def customizePom(pom, gradleProject) {
@@ -29,8 +52,10 @@ def customizePom(pom, gradleProject) {
 
         // add all items necessary for maven central publication
         generatedPom.project {
-            name = gradleProject.description
-            description = gradleProject.description
+            name = 'Spring Social Yahoo'
+            packaging = 'jar'
+            description = 'Spring Social Yahoo is an extension based on Spring Social that provides functionality to ' +
+                    'communicate with the Yahoo Social Rest API'
             url = 'https://github.com/gabrielruiu/spring-social-yahoo.git'
             organization {
                 name = 'Gabriel Ruiu'
