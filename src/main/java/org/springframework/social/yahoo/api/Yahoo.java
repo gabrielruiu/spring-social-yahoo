@@ -18,6 +18,8 @@ package org.springframework.social.yahoo.api;
 import org.springframework.social.ApiBinding;
 
 /**
+ * Main interface for interacting with the Yahoo Social Api.
+ *
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 public interface Yahoo extends ApiBinding {
