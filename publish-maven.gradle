@@ -13,6 +13,10 @@ install {
     }
 }
 
+def isReleaseBuild() {
+    return project.version.contains("SNAPSHOT") == false
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -32,6 +36,7 @@ uploadArchives {
 }
 
 signing {
+    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
     sign configurations.archives
 }
 
