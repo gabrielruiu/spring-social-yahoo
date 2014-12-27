@@ -11,7 +11,7 @@ Before proceeding with using this library, please consult the **Notes** section.
 The best way to learn how use the library is to consult the [Spring Social documentation](http://docs.spring.io/spring-social/docs/current/reference/htmlsingle/) and
 apply those principles for the classes specific to Yahoo.
 
-**Do not hesitate to point out any issues and I am very open to suggestion, both in terms of implementation and documentation**
+**Do not hesitate to point out any issues and I am very open to suggestions, both in terms of implementation and documentation**
 
 # Changelist
 
