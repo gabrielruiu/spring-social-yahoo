@@ -29,7 +29,7 @@ apply plugin: 'java'
 apply plugin: 'license'
 apply from: "${rootProject.projectDir}/publish-maven.gradle"
 
-group = 'org.springframework.social'
+group = 'com.github.gabrielruiu'
 
 repositories {
     mavenCentral()
