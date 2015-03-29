@@ -80,3 +80,6 @@ artifacts {
     archives javadocJar
 }
 
+release {
+    failOnPublishNeeded = false
+}
