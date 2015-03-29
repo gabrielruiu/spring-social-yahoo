@@ -17,10 +17,12 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
         classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
+        classpath 'net.researchgate:gradle-release:2.0.2'
     }
 }
 
@@ -28,6 +30,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'license'
 apply from: "${rootProject.projectDir}/publish-maven.gradle"
+apply plugin: 'net.researchgate.release'
 
 group = 'com.github.gabrielruiu'
 
