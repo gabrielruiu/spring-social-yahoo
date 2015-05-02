@@ -29,7 +29,9 @@ import org.junit.runner.RunWith;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static com.github.gabrielruiu.springsocial.yahoo.filter.SearchFilter.SearchFilterConstraint.*;
+import static com.github.gabrielruiu.springsocial.yahoo.filter.SearchFilter.SearchFilterConstraint.CS_CONTAINS;
+import static com.github.gabrielruiu.springsocial.yahoo.filter.SearchFilter.SearchFilterConstraint.IS;
+import static com.github.gabrielruiu.springsocial.yahoo.filter.SearchFilter.SearchFilterConstraint.PRESENT;
 import static com.github.gabrielruiu.springsocial.yahoo.filter.SearchFilter.SearchableField.CATEGORY;
 import static com.github.gabrielruiu.springsocial.yahoo.filter.TokenUtils.SYMBOL_COMMA;
 import static com.github.gabrielruiu.springsocial.yahoo.filter.TokenUtils.SYMBOL_SEMICOLON;
@@ -108,6 +110,7 @@ public class SearchFilterTest {
     /**
      * All {@link FieldType}s are valid for search filtering, except FieldType.NAME
      */
+    @SuppressWarnings("unused")
     private Object[] validFieldTypes() {
         Collection<FieldType> fieldTypes = Collections2.filter(Arrays.asList(FieldType.values()), new Predicate<FieldType>() {
             @Override
@@ -121,10 +124,12 @@ public class SearchFilterTest {
     /**
      * All {@link SearchableField}s are valid for search filtering
      */
+    @SuppressWarnings("unused")
     private Object[] validSearchableFields() {
         return SearchableField.values();
     }
 
+    @SuppressWarnings("unused")
     private Object[] invalidFields() {
         return new Object[]{"invalidField1", "invalidField2", "invalidField3", NAME.name().toLowerCase()};
     }

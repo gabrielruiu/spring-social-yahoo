@@ -30,7 +30,12 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static com.github.gabrielruiu.springsocial.yahoo.filter.SortFields.SortableField.DISPLAY_NAME;
-import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.*;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.ADDRESS;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.ANNIVERSARY;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.EMAIL;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.GUID;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.NAME;
+import static com.github.gabrielruiu.springsocial.yahoo.module.FieldType.YAHOOID;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -103,6 +108,7 @@ public class SortFieldsTest {
      * All {@link FieldType}s are valid for sorting, except for NAME and ADDRESS.
      * Requests can be sorted by names using the enum values of {@link SortableField}.
      */
+    @SuppressWarnings("unused")
     private Object[] validFieldTypes() {
 
         Collection<FieldType> fieldTypes = Collections2.filter(Arrays.asList(FieldType.values()), new Predicate<FieldType>() {
@@ -117,10 +123,12 @@ public class SortFieldsTest {
     /**
      * All {@link SortableField} are valid for sorting.
      */
+    @SuppressWarnings("unused")
     private Object[] validSortableFields() {
         return SortableField.values();
     }
 
+    @SuppressWarnings("unused")
     private Object[] invalidFields() {
         return new Object[]{"invalidField1", "invalidField2", "invalidField3", ADDRESS.name().toLowerCase(),
                             NAME.name().toLowerCase()};
