@@ -1,0 +1,225 @@
+{
+  "contacts": {
+    "contact": [
+      {
+        "isConnection": false,
+        "id": 10,
+        "fields": [
+          {
+            "id": 113,
+            "type": "name",
+            "value": {
+              "givenName": "Homer",
+              "middleName": "Jay",
+              "familyName": "Simpson",
+              "prefix": "none",
+              "suffix": "none",
+              "givenNameSound": "Homer",
+              "familyNameSound": "Simpson"
+            },
+            "editedBy": "OWNER",
+            "flags": ["WORK"],
+            "categories": [],
+            "updated": "2008-10-19T15:46:22Z",
+            "created": "2008-10-19T15:46:22Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/name/113"
+          },
+          {
+            "id": 114,
+            "type": "yahooid",
+            "value": "homersimpson",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2008-10-19T15:46:22Z",
+            "created": "2008-10-19T15:46:22Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/yahooid/114"
+          },
+          {
+            "id": 115,
+            "type": "guid",
+            "value": "homers-guid",
+            "editedBy": "OWNER",
+            "flags": [
+              "Y360"
+            ],
+            "isConnection": false,
+            "categories": [],
+            "updated": "2014-12-07T20:28:27Z",
+            "created": "2014-12-07T20:28:27Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/guid/115"
+          },
+          {
+            "id": 116,
+            "type": "nickname",
+            "value": "Home-boy",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2009-10-05T19:46:48Z",
+            "created": "2009-10-05T19:46:48Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/nickname/116"
+          },
+          {
+            "id": 117,
+            "type": "email",
+            "value": "chunkylover53@aol.com",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2015-10-25T19:36:58Z",
+            "created": "2015-10-25T19:36:58Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/email/117"
+          },
+          {
+            "id": 118,
+            "type": "otherid",
+            "value": "homey_cool",
+            "editedBy": "OWNER",
+            "flags": [
+              "GOOGLE"
+            ],
+            "categories": [],
+            "updated": "2007-04-27T15:15:59Z",
+            "created": "2007-04-27T15:15:59Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/otherid/118"
+          },
+          {
+            "id": 119,
+            "type": "phone",
+            "value": "(408) 555-5555",
+            "editedBy": "OWNER",
+            "flags": [
+              "WORK"
+            ],
+            "categories": [],
+            "updated": "2015-10-04T06:27:34Z",
+            "created": "2015-10-02T06:21:49Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/phone/119"
+          },
+          {
+            "id": 120,
+            "type": "jobTitle",
+            "value": "Nuclear safety inspector",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2014-12-03T18:34:34Z",
+            "created": "2014-12-03T18:34:34Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/jobTitle/120"
+          },
+          {
+            "id": 121,
+            "type": "company",
+            "value": "Bethesda",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2014-12-03T18:34:34Z",
+            "created": "2014-12-03T18:34:34Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/company/121"
+          },
+          {
+            "id": 122,
+            "type": "notes",
+            "value": "Drinks a lot of beer",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2017-02-18T08:53:55Z",
+            "created": "2017-02-18T08:53:55Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/notes/122"
+          },
+          {
+            "id": 123,
+            "type": "link",
+            "value": "http://www.homerswebpage.com/",
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2014-12-03T18:34:34Z",
+            "created": "2014-12-03T18:34:34Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/link/123"
+          },
+          {
+            "id": 124,
+            "type": "address",
+            "value": {
+              "street": "742 Evergreen Terrace",
+              "city": "Springfield",
+              "stateOrProvince": "Springfield",
+              "postalCode": "13231",
+              "country": "United States of America",
+              "countryCode": "USA"
+            },
+            "editedBy": "OWNER",
+            "flags": [
+              "HOME"
+            ],
+            "categories": [],
+            "updated": "2014-12-15T21:42:04Z",
+            "created": "2014-12-15T21:42:04Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/address/124"
+          },
+          {
+            "id": 125,
+            "type": "birthday",
+            "value": {
+              "day": "12",
+              "month": "5",
+              "year": "1956"
+            },
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2014-12-14T21:05:36Z",
+            "created": "2014-12-14T21:05:36Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/birthday/125"
+          },
+          {
+            "id": 126,
+            "type": "anniversary",
+            "value": {
+              "day": "12",
+              "month": "5",
+              "year": "1990"
+            },
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2014-12-14T21:05:36Z",
+            "created": "2014-12-14T21:05:36Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/anniversary/126"
+          }
+        ],
+        "categories": [
+          {
+            "name": "group1",
+            "id": 1,
+            "created": "1333616892",
+            "updated": "1333616895",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/category/"
+          },
+          {
+            "name": "group2",
+            "id": 2,
+            "created": "1417984089",
+            "updated": "1417984089",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/category/"
+          }
+        ],
+        "error": 0,
+        "restoredId": 0,
+        "created": "2008-10-19T15:46:22Z",
+        "updated": "2014-12-07T20:28:27Z",
+        "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10"
+      }
+    ],
+    "count": 1,
+    "total": 1,
+    "start": 0,
+    "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contacts",
+    "created": "1417984089",
+    "updated": "1417984089"
+  }
+}
