@@ -190,6 +190,22 @@
             "updated": "2014-12-14T21:05:36Z",
             "created": "2014-12-14T21:05:36Z",
             "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/anniversary/126"
+          },
+          {
+            "id": 127,
+            "type": "Image",
+            "value": {
+              "imageUrl": "https://proddata.xobni.yahoo.com/v4/contacts/9b97.481a/photo?alphatar_photo=true",
+              "imageType": "PNG",
+              "imageSource": "yahoo:xobni",
+              "imageMetadata": ""
+            },
+            "editedBy": "OWNER",
+            "flags": [],
+            "categories": [],
+            "updated": "2016-03-17T12:21:45Z",
+            "created": "2015-10-02T06:21:49Z",
+            "uri": "http://social.yahooapis.com/v1/user/my-yahoo-guid/contact/10/Image/127"
           }
         ],
         "categories": [

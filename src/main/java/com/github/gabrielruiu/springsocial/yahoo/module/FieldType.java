@@ -83,5 +83,9 @@ public enum FieldType {
     /**
      * The contacts anniversary
      */
-    ANNIVERSARY
+    ANNIVERSARY,
+    /**
+     * The contacts display photo
+     */
+    IMAGE
 }

@@ -57,4 +57,5 @@ abstract class ContactMixin extends YahooObjectMixin {
     @JsonIgnore abstract DateFieldValue getAnniversary();
     @JsonIgnore abstract NameFieldValue getName();
     @JsonIgnore abstract AddressFieldValue getAddress();
+    @JsonIgnore abstract ImageFieldValue getImage();
 }

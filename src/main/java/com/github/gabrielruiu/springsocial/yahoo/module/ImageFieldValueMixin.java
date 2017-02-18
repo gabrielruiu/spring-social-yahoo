@@ -18,38 +18,19 @@ package com.github.gabrielruiu.springsocial.yahoo.module;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonTypeResolver;
-
-import java.util.Date;
-import java.util.Set;
 
 /**
  * @author Ruiu Gabriel Mihai (gabriel.ruiu@mail.com)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.CUSTOM, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true)
-@JsonTypeResolver(YahooTypeResolver.class)
-abstract class FieldMixin {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NONE, include = JsonTypeInfo.As.WRAPPER_OBJECT)
+abstract class ImageFieldValueMixin extends FieldValue {
 
-    @JsonProperty("id") int id;
+    @JsonProperty("imageUrl") String imageUrl;
 
-    @JsonProperty("created") Date created;
+    @JsonProperty("imageType") String imageType;
 
-    @JsonProperty("updated") Date updated;
+    @JsonProperty("imageSource") String imageSource;
 
-    @JsonProperty("uri") String uri;
-
-    @JsonProperty("isConnection") boolean isConnection;
-
-    @JsonProperty("nickname") String nickname;
-
-    @JsonProperty("title") String title;
-
-    @JsonProperty("value") Object value;
-
-    @JsonDeserialize(using = FieldTypeDeserializer.class)
-    @JsonProperty("type") FieldType type;
-
-    @JsonProperty("flags") Set<FieldFlag> flags;
+    @JsonProperty("imageMetadata") String imageMetadata;
 }

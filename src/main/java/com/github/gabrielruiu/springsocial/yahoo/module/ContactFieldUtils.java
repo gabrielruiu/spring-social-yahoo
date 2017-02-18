@@ -46,6 +46,14 @@ class ContactFieldUtils  {
         return null;
     }
 
+    public static ImageFieldValue getImageValue(Contact contact) {
+        ImageField imageField = (ImageField) getField(contact, FieldType.IMAGE);
+        if (imageField != null) {
+            return imageField.getValue();
+        }
+        return null;
+    }
+
     public static String getValueFromSingleValueField(Contact contact, FieldType fieldType) {
         return getValueFromSingleField(getField(contact, fieldType));
     }

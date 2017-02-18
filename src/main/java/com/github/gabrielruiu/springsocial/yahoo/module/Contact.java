@@ -154,4 +154,8 @@ public class Contact extends YahooObject {
     public AddressFieldValue getAddress() {
         return ContactFieldUtils.getAddressValue(this);
     }
+
+    public ImageFieldValue getImage() {
+        return ContactFieldUtils.getImageValue(this);
+    }
 }

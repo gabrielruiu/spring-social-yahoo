@@ -56,6 +56,7 @@ public class YahooTypeIdResolver extends TypeIdResolverBase {
     private Map<String, JavaType> generateFieldValueMappings() {
         Map<String, JavaType> mappings = new HashMap<String, JavaType>();
         mappings.put("address", mapperConfig.constructType(AddressField.class));
+        mappings.put("Image", mapperConfig.constructType(ImageField.class));
         mappings.put("name", mapperConfig.constructType(NameField.class));
         mappings.put("anniversary", mapperConfig.constructType(DateField.class));
         mappings.put("birthday", mapperConfig.constructType(DateField.class));
